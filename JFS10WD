@@ -1,0 +1,165 @@
+1. tasks from guvi end -> 10-15 tasks, module assessmemt (skill enhancement)
+2. mini project, capstone project 
+3. assessment
+
+Java Full Stack --> 
+
+backend & front end -> Java
+data base -> you store your data (personal & confidential)
+
+Intro to Java. -> web,mobile,desktop apps development,
+platform independent -> runs on any OS
+OOPS -> follows object oriented programming lang
+
+JVM , JDK, JRE ->
+
+JVM -> load, verfiy, execute code & provide runtime environment
+JRE -> implementation of JVM.. libraries + files -> Sun Microsystems
+JDK -> JRE + some other tools like javac, java etc..
+	Open JDK vs Oracle/Amazon Corretto JDK..
+	Javadoc, jar, javac, load java it has tools
+
+JEP -> Java Enhancement Proposal..
+	irregular -> Java 6 : 2007, Java 7 : 2011, Java 8 : 2014, Java 9 : 2017.. Java 22 : 2024
+	LTS -> java 8, 11, 17, 21 (current lts version)
+	every six months i.e., march & september.. minor versions non-lts versions..
+	march 12 & sept had java 13.. 12 will be supported until 13 release..
+
+backward compatability ->
+
+Installation of Java & IDE.
+
+	Install JDK -> Amazon Corretto, Oracle or any other provider.. Go with Java 11 or Java 17
+		java -version in command prompt
+	check environment & system variable -> path to your java.. add JAVA_HOME, also add in path if not present
+
+
+task : run a java file in your local machine without using an IDE & with using IDE.
+
+Install IDE -> eclipse or sts or IntelliJ or any other tool you wish..
+
+Java Basics :
+
+	class -> blueprint
+	object -> car ==> attributes : weight, color., methods/functionx -> drive, brakes
+ 	
+ 	Variables : to store data values
+
+ 	 //local, global/instance, static
+
+    int price = 700; //instance or global variable
+
+    static int m = 100; // static variable -> memory allocated once when class is loaded in memory
+
+    public static void main(String[] args) {
+
+        Car car = new Car();
+
+        car.price =90; //object-level or instance variable
+
+        int x = 80; //local variable
+
+//        price = 90;
+         m = 90;
+    }
+
+   public void add(){
+        int sum = 100; //local variable
+        m = 999;
+    }
+
+ 	Primitive Data types : byte, short, int, long, float, double, boolean, char
+ 		-> predefined, immutable, stored in stack memory, store single values
+
+ 	Non-primitive	-> stores multiple values, user-defined,  mutable, stored in heap memory
+ 		String, Array, Object etc
+
+ 	Wrapper Classes -> collection, generics, autoboxing -> primitive to wrapper, unboxing is vice versa
+ 		Integer, Double, Long, Float etc built on primitive data types
+ 			
+
+ 		String -> text in ->  "double quotes"  -> "100 Marks"
+ 		int -> whole numbers
+ 		float -> 110.09f
+ 		char -> character -> 'a' -> one alphabet in single quote
+ 		boolean -> true/false
+ 		double val = 190.09; -> 8 bytes of memory
+        float flVal = 190.09f; -> 4bytes of memory
+        long longVal = 198081893786387457L;; -> 8 bytes of memory
+        byte byteVal = 0; -> -128 to 127
+        short  shortVal = 100;
+
+        Non-primitive Datatypes: String
+
+
+ 	compile time & run time -> compile == while writing the code, run-time -> when you run/execute the code.
+
+
+ Type Casting -> convertinf from one data type to other data type
+ 
+ Example :  Widening & Narrow Casting
+
+
+        
+    //byte < short < char < int < long < float < double
+
+    widening:
+
+        int myInt = 8;
+        double myDoubValue = myInt; //Automatic casting
+
+//        System.out.println(myInt);
+//        System.out.println(myDoubValue);
+
+	narrow
+
+        double db1 = 9.67d;
+        int intVal = (int) db1; // manual cast
+
+        System.out.println(db1);
+        System.out.println(intVal);
+
+Operators : Arithmetic, assignment, comparison, logical, bitwise
+
+	 int result = 100 + 700;
+        
+        String output = "Hi " + "Welcome"; -> concatenation/concatinate
+
+        System.out.println(result);
+        System.out.println(output);
+
+     Postfix :
+     
+      int x = 1, j;
+       j = x++;
+
+        System.out.println(j + " " + x );
+
+
+        logical operators:
+
+      int age = 17;
+
+        System.out.println(age > 18 && age < 100);//false
+        System.out.println(age > 18 || age < 100);//true
+        System.out.println(!(age > 18 || age < 100));//false   
+
+        Scanner :
+
+         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter your age ");
+
+        int age = scanner.nextInt();
+        
+
+        System.out.println(age > 18 && age < 100);//false
+        System.out.println(age > 18 || age < 100);//true
+        System.out.println(!(age > 18 || age < 100));//false
+
+Conditional statements: after this terenary operator
+
+Decision -> if/switch -> if, if-else, if, else if, nested if
+loop -> while, do while, for, for-each
+jump -> break, continue
+
