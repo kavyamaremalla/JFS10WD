@@ -95,7 +95,7 @@ Java Basics :
  	compile time & run time -> compile == while writing the code, run-time -> when you run/execute the code.
 
 
- Type Casting -> convertinf from one data type to other data type
+ Type Casting -> converting from one data type to other data type
  
  Example :  Widening & Narrow Casting
 
@@ -157,9 +157,102 @@ Operators : Arithmetic, assignment, comparison, logical, bitwise
         System.out.println(age > 18 || age < 100);//true
         System.out.println(!(age > 18 || age < 100));//false
 
-Conditional statements: after this terenary operator
+Conditional/Control statements: after this terenary operator
 
-Decision -> if/switch -> if, if-else, if, else if, nested if
+Decision -> if/switch -> if, if-else, if & else if, nested if
 loop -> while, do while, for, for-each
-jump -> break, continue
+jump -> break, continue, return
 
+18/07/24 : 
+
+Debugging a class -> scanner and nested-if example.
+
+Naming conventions :
+
+	class -> start with capital letter -> upper camel case 
+		SwitchCaseExample
+	variable/function/ method name -> starts with small letter
+		int age;
+		public void sum(){}
+	checking account balance method-> checkAccountBalance -> lower camel case
+	car -> applyBrakesForCar
+
+Switch :
+
+import java.util.Scanner;
+
+public class SwitchCaseExample {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter day in a week ");
+//        char dayOfWeek = scanner.next().charAt(0);
+
+        String dayOfWeek = scanner.next();
+
+        switch (dayOfWeek){
+            case "Monday" :
+                System.out.println("Day 1");
+                break;
+            case "Tuesday" :
+                add();
+                System.out.println("Day 2");
+                break;
+            case "Wednesday" :
+                System.out.println("Day 3");
+                break; //keyword
+            default:
+                System.out.println("Please check your input");
+        }
+
+
+    }
+
+    public static void add(){
+        System.out.println("Inside add");
+    }
+}
+
+For loop :
+
+ System.out.println("Started for loop execution");
+
+        for(int i = 5; i <10; i++){
+            System.out.println(i);
+        }
+
+        System.out.println("For loop ended");
+
+Nested-for :
+
+    for(int i = 1; i <= 3; i++){ // 1, 2, 3
+            for (int j = 1; j <= 3 ; j++) {
+                System.out.println(i + " " + j); // 1 1 , 2, 3:::: 2 1 2 3 :::  3, 1, 2, 3
+            }// ends i loop
+        } // ends j loop        
+
+ int i =3;
+
+        System.out.println(i);
+        System.out.println(i++);
+        System.out.println(i);
+        System.out.println(++i);
+
+
+for-each loop :       
+
+
+        int arr[] = {1,2,51,62,86,98};
+
+        for(int i : arr){
+            System.out.println(i);
+        } 
+
+ infinite for loop -> 
+ 
+     for( ;  ; ){
+
+            System.out.println("Inside for loop");
+        }       
