@@ -256,3 +256,22 @@ for-each loop :
 
             System.out.println("Inside for loop");
         }       
+
+ while loop :
+ 
+  int i = 1;
+
+        while (i< 10){
+            System.out.println(i);
+            ++i;
+        }
+
+do-while loop:
+
+ int i = 1;
+       
+       do{
+           System.out.println(i);
+           i++;
+       }while (i<=10);
+                   
