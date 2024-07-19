@@ -241,7 +241,7 @@ Nested-for :
         System.out.println(++i);
 
 
-for-each loop :       
+for-each/enhanced-for loop : to iterate over collections  
 
 
         int arr[] = {1,2,51,62,86,98};
@@ -250,6 +250,18 @@ for-each loop :
             System.out.println(i);
         } 
 
+int[] arrayOfNumbers = {1,2,51,62,86,98};
+
+        for(int integerValue : arrayOfNumbers){
+            System.out.println(integerValue);
+        }
+
+
+        System.out.println("*******************************************");
+
+        for (int i=0; i < arrayOfNumbers.length ; i++){
+            System.out.println(arrayOfNumbers[i]);
+        }
  infinite for loop -> 
  
      for( ;  ; ){
@@ -274,4 +286,76 @@ do-while loop:
            System.out.println(i);
            i++;
        }while (i<=10);
-                   
+
+
+break, return & continue :
+
+  public static void main(String[] args) {
+        for (int i = 0; i <=10 ; i++) {
+            if(i==5){
+//                return;
+//                continue;
+                break;
+            }
+            System.out.println(i);
+        }
+
+        calculateEngineCC(20);
+    }
+
+    public static int calculateEngineCC(int weight){
+        int capacity = weight * 1000;
+        System.out.println(capacity);
+        return capacity;
+    }       
+
+
+Ternary Operator :
+
+ String result = age >= 18 ? "Eligible to vote"  : "Please check next time, not-eligible" ;
+
+ Math Operations
+
+ Literals -> Integer, Character, Boolean, String
+
+ 	int price = 750; // 750 -> literal
+
+Main method:
+
+    public static void main(String[] args) {
+    }
+
+    public -> to call this method from anywhere by JVM
+    static -> can be called without creating an object of the class & memory will be allocated to this..
+    void -> no return value to JVM
+    main -> name of method
+    String[] args -> one argument/parameter of type String array
+
+Keywords
+	void -> no return type
+	static
+
+create objects
+
+Access Modifiers -> public, private, protected, default
+
+Git : github, gitlab, bitbucket.. -> distributed version control system
+
+	1. signup
+	2. create a repository
+	3. add files/folders
+
+Bring from your github account to your local machine :	
+
+git clone https://github.com/kavyamaremalla/JFS10WD.git
+
+Add files to github account : Committing to git
+
+	local ->  staging(temporary storage of files to be committed)  -> github account
+
+git status -> file status 
+git add <fileName which you want to send to github account> or for all files -> git add .
+git commit -m "Your Message Here : Reason why you are committing" -> local to staging
+git push -> from staging to github account
+
+git pull -> changes from github  made by others to be in your local machine
