@@ -380,6 +380,8 @@ Update ->
 
 Delete an element from array without conversion.
 
+Removing element from array & insert an element into array without using arraylist
+
 Keywords
 	void -> no return type
 	static -> memory allocated first to this method
