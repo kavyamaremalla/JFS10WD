@@ -331,14 +331,6 @@ Main method:
     main -> name of method
     String[] args -> one argument/parameter of type String array
 
-Keywords
-	void -> no return type
-	static
-
-create objects
-
-Access Modifiers -> public, private, protected, default
-
 Git : github, gitlab, bitbucket.. -> distributed version control system
 
 	1. signup
@@ -359,3 +351,45 @@ git commit -m "Your Message Here : Reason why you are committing" -> local to st
 git push -> from staging to github account
 
 git pull -> changes from github  made by others to be in your local machine
+
+
+22/7/24 :
+Arrays :
+Create Arrays :
+String[] carBrands = {"Volvo", "Hyundai", "Kia" , String.valueOf(7)};
+
+Integer[] carPrice = {76, 89, 90, 12, Integer.parseInt("45")};
+
+Read Ops on Array:
+
+Index -> position of an element & starts with 0
+
+    array[indexPosition] -> return element in that particular position
+
+    carBrands[4] -> ArrayIndexOutOfBoundsException: Index 4 out of bounds for length 4
+
+    carBrands.length -> length of the array (here it's 4)
+
+    Read an array -> Arrays.toString(carBrands)
+
+    for/for-each on array -> reads elements separately
+
+Update ->
+
+    nameOfArray[indexPositionToUpdate]  = updatedValue
+
+Delete an element from array without conversion.
+
+Keywords
+	void -> no return type
+	static -> memory allocated first to this method
+
+create objects
+
+    1. using new keyword
+    2. using new instance
+    3. using clone() method
+    4. using deserialization
+    5. using newInstance() of constructor class
+
+Access Modifiers -> public, private, protected, default
