@@ -1,7 +1,10 @@
-public class BreakExample implements Cloneable{
+public class BreakExample {
 
     public static void main(String[] args) {
-        for (int i = 0; i <=10 ; i++) {
+
+        int x = 10; // read from scanner
+
+        for (int i = 0; i <=x ; i++) {
             if(i==5){
 //                return;
 //                continue;

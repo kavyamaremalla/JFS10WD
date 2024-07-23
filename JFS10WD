@@ -353,9 +353,14 @@ git push -> from staging to github account
 git pull -> changes from github  made by others to be in your local machine
 
 
+Keywords
+	void -> no return type
+	static -> memory allocated first to this method
+
 22/7/24 :
 Arrays :
 Create Arrays :
+
 String[] carBrands = {"Volvo", "Hyundai", "Kia" , String.valueOf(7)};
 
 Integer[] carPrice = {76, 89, 90, 12, Integer.parseInt("45")};
@@ -378,13 +383,9 @@ Update ->
 
     nameOfArray[indexPositionToUpdate]  = updatedValue
 
-Delete an element from array without conversion.
+Delete an element from array without conversion to array list.
 
 Removing element from array & insert an element into array without using arraylist
-
-Keywords
-	void -> no return type
-	static -> memory allocated first to this method
 
 create objects
 
@@ -394,4 +395,24 @@ create objects
     4. using deserialization
     5. using newInstance() of constructor class
 
+23/07/24    
+
 Access Modifiers -> public, private, protected, default
+	- class, method, variables & constructors
+
+package -> group of classes within same space
+
+array sorting -> with and without in-built sort method	
+array compares
+array equals, fill
+
+Strings : 
+
+	 - charAt(), compareTo(), compareToIgnoreCase(), concat(),contains(), toLowerCase , toUpperCase, equals, endsWith, startsWith, matches, replaces, split, length, split,
+	 subString -> string sequence ; subSequence -> CharSequence, toCharArray, toString, String.valueOf, trim
+
+Task :  sort a string array using compareTo
+
+24/07/24
+
+regex, string pool, string builder & buffer, Oops, constructors
