@@ -415,4 +415,42 @@ Task :  sort a string array using compareTo
 
 24/07/24
 
-regex, string pool, string builder & buffer, Oops, constructors
+regex, string pool, string builder & buffer, constructors
+
+Regex -> Regular Expression
+
+	. create gmail/email as i/p -> @gmail.com
+	. pattern -> capCase, small case, spcl charc, some numbers, min length
+		[A-Z], [a-z], [0-9], for not equal to ^ (cap)
+		[aA0-zZ9]{3,5}@ -> combined, range
+		\d -> decimal
+		\D -> non-decimal
+		\w -> like combined (decimal & non-deecimal)
+		\W -> alpha-numeric
+		. -> \w + \W
+		.* -> repeatition
+		.+ -> match anything
+
+1. define a string pattern
+2. compile the string to a regex
+3. give i/p
+4. match i/p & regex
+
+
+String -> immutable class
+String Builder & String Buffer -> mutable classes
+
+string pool -> Java heap memory storage
+	-> .equals checks only value of strings
+	-> == checks reference/address/memory of strings
+
+Constructor :
+	to initialize the objects
+	when you create an object of class, that class's constructor will be called -> default
+	parameterized constructor -> when you send parameters
+		-> pass any number of parameters
+		-> this keyword
+
+25/07/24:
+
+Oops	
