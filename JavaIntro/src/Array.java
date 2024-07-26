@@ -1,7 +1,8 @@
 import java.util.Arrays;
 
-public class Array {
+public class Array{
     public static void main(String[] args) {
+
 
         //CRUD --> Create, Read, Update, Delete
 

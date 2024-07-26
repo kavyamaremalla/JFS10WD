@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Conditional {
 
+    String condition = "if";
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in); //creating an object for scanner

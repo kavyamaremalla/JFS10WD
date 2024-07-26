@@ -447,10 +447,57 @@ string pool -> Java heap memory storage
 Constructor :
 	to initialize the objects
 	when you create an object of class, that class's constructor will be called -> default
-	parameterized constructor -> when you send parameters
+	parameterized/argumented constructor -> when you send parameters
 		-> pass any number of parameters
 		-> this keyword
 
 25/07/24:
 
-Oops	
+Oops - Object Oriented Programming
+	DRY, Don't Repeat Yourself principle -> reduce repetition of code -> boiler plate code
+
+Encapsulation -> hiding sensitive data from users
+	-> variables/methods/attributes will be defined as private
+	-> public get and set methods to access and update the private variables
+
+Inheritance : getting methods, variables from one class to other class
+ 	-> subclass (child class) :: the class inherits from another class
+ 	-> superclass (parent class) :: class which is being inherited
+ 	keyword -> extends
+ 	-> multiple inheritance -> one sub class trying to extend more than one super class
+ 		-> no, java doesn't support multiple inheritance
+ 			- Diamond problem
+ 			- complexity.. it should be simple and readable
+ 	-> can't inherit from a final class
+ 	Immutable -> other class can't modify attributes, methods etc in a class.
+ 		-> final keyword at class level -> no other class can extend this immutable class
+ 		-> declare variables as private and final, only you provide getters	and no setters are declared, provides constructor to initialize the variables
+ 		***** Once the object is initialized, it can't be modified!	******
+	super keyword -> superclass(parent objects)
+		-> calls constructor/methods/variables of parent class without creation of object to a parent class
+	types : single, multi level, hierarchical, hybrid	
+
+26/07/24 :
+
+	SUPER keyword example -> Person & Employee
+
+Polymorphism
+	-> exists in many forms & it occurs when we have many classes that are related to each other by inheritance --> you can do a single action in multiple ways
+		. compiletime polymorphism -> method overloading
+		. run time polymorphism -> method overriding
+	Method overriding -> during run time, jvm determines which method to call
+		. from parent, you can create an object of sub class
+		. can't override a static method ->
+	Method Overloading -> during run time, jvm determines which method to call
+		. change input parameters data-type (instead of int, double)
+		- change number of arguments passed	(instead of 2 int args, 3 int args)
+			ambiguity -> if jvm can't determine the type
+	@Override -> indicates that a method in a subclass is intended to override a method in parent class
+		. if method is not present in parent, but in child if you put @Override it gives you compilation error
+		. applicable only on methods not on variables/constructors
+		. checks name of parent method and number & type of parameters.. to match with child class
+		. improves readability
+			
+29/07/24
+
+Abstraction	
