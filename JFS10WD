@@ -460,7 +460,7 @@ Encapsulation -> hiding sensitive data from users
 	-> variables/methods/attributes will be defined as private
 	-> public get and set methods to access and update the private variables
 
-Inheritance : getting methods, variables from one class to other class
+Inheritance(is-a relationship) : getting methods, variables from one class to other class
  	-> subclass (child class) :: the class inherits from another class
  	-> superclass (parent class) :: class which is being inherited
  	keyword -> extends
@@ -487,17 +487,91 @@ Polymorphism
 		. run time polymorphism -> method overriding
 	Method overriding -> during run time, jvm determines which method to call
 		. from parent, you can create an object of sub class
-		. can't override a static method ->
-	Method Overloading -> during run time, jvm determines which method to call
-		. change input parameters data-type (instead of int, double)
-		- change number of arguments passed	(instead of 2 int args, 3 int args)
-			ambiguity -> if jvm can't determine the type
+		. can't override a static method
 	@Override -> indicates that a method in a subclass is intended to override a method in parent class
 		. if method is not present in parent, but in child if you put @Override it gives you compilation error
 		. applicable only on methods not on variables/constructors
 		. checks name of parent method and number & type of parameters.. to match with child class
 		. improves readability
+	Method Overloading -> during compile time, jvm determines which method to call
+		. change input parameters data-type (instead of int, double)
+		. change number of arguments passed	(instead of 2 int args, 3 int args)
+			ambiguity -> if jvm can't determine the type 
+				(int, double as i/p params for MethodA & double, int as i/p params for MethodB)
 			
 29/07/24
 
-Abstraction	
+Abstraction	-> Data abstraction is called hiding the implementation/logic and showing the essential details
+		1. using abstract class -> abstract keyword on classes/methods
+			can have both abstract & non-abstract methods
+			. class -> restricted class & can't be used to create objects (to use this, we have to inherit this class from another class)
+			. method -> can be used only in abstract class and it doesn't have a body. The body will be provided its subclass(inherited class/child classs)
+			. abstract is not available at variable level
+		2. using interface
+			-> completely follows abstract class but, related methods will have empty bodies
+			-> implements keyword (child implements methods of parent)
+			-> 100% abstraction can be achieved by interface because it doesn't show any logic in normal methods as well (not only abstract class)
+			->	by default all methods in an interface are abstract and public.
+			-> by default, a variable in an interface is static and final
+			->	you can implement multiple interfaces
+
+********* extends -> class level & implements -> interface level ************	
+Multi level inheritance is not possible but multiple inhertiance using interface is possible
+
+Enums : enumeration/enumerator
+
+	-> group of constants, can't be changed just like final variables, enum(keyword) is a spcl class
+	-> All constants are by default public, static, final
+
+30/07/24 :
+
+Association -> one-to-one, one-to-many, many-to-one, many-to-many relationships/mapping
+
+Aggregation -> has-a relationship	
+			bike(child) can exist independently, Vehicle as a parent can't exist independently
+
+Composition : part-of (house and room, house is destroyed -> room will also be destroyed)		
+
+Task : try to get practical example of Association, Aggregation & Composition
+
+Exception handling :
+
+technically, throw an exception -> when you expect some error in the program
+	can't have multiple try blocks but can have multiple catch blocks -> in single try catch
+	finally -> even if try/catch executes or not, this gets executed
+	throw(line level) vs throws(method level) -> error handling 
+Inbuilt Exception:
+	checked vs unchecked -> 
+		checked -> exceptions should be handled by user, don't extend runtimeexception
+			FileNotFoundException
+			throws -> at method level, the method which calls the throws method expects to handle exception either by writing try-catch block or throws exception
+				-> suggested to use try-catch
+		unchecked -> exceptions jvm handles, these extend runtimeexception
+			ArithmeticException
+
+Custom Exception/User-defined exception : we create our own exception
+	1. extends exception
+	2. calling Parent's constructor from child(user defined exp class) constructor
+
+Collections : framework of Java, which stores/manipulates group of objects.. Collection means a single unit of objects
+	-> Book/Coin Collection
+	-> it provides interfaces(List, Set, Queue, Dequeue, Map) & classes to perform data operations
+
+Iterable (interface) > Collection(Interface)
+				Under coll	-> List (interface) : linkedlist, arraylist..
+							-> Queue (interface) -> Dequeue(interface)
+							-> Set(interface) -> Sorted set(interface)
+							-> Map (interface)
+List 
+
+	ArrayList
+	-> array vs arrayList : 
+		. create an arrayList
+		. add elements
+		. allows duplicates
+		. read using for each loop
+		. convert array to list and list to array
+		. follows insertion order
+		. Collections.sort(nameOfList)	
+		. size of arraylist
+		. contains -> search an object in an arrayList				

@@ -25,4 +25,5 @@ public final class ImmutablePerson {
 //        immutablePerson.age = 40;
         System.out.println(immutablePerson.name + " " + immutablePerson.age);
     }
+
 }
