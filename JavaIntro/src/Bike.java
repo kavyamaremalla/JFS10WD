@@ -22,5 +22,13 @@ public class Bike extends Vehicle{
         System.out.println("Brakes Applied from bike!");
     }
 
+    @Override
+    public String toString() {
+        return "Bike{" +
+                "modelName='" + modelName + '\'' +
+                ", brand='" + brand + '\'' +
+                ", condition='" + condition + '\'' +
+                '}';
+    }
 }
 

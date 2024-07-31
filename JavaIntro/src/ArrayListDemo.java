@@ -16,23 +16,38 @@ public class ArrayListDemo {
         fruits.add("banana");// index 1
         fruits.add("mango"); // index 2
         fruits.add("apple"); //index 3
+        fruits.add(null);
+        fruits.add(null);
+
+
+
+        fruits.add(2, "Orange");// to add in a particular position
 
         fruits.set(1, "grapes");//replaces value in the specified index position
 //        fruits.set(2, "kiwi");
 
 //        System.out.println(fruits.get(2));
 
-        fruits.remove(2); // delete an element from particular index
+//        fruits.remove(2); // delete an element from particular index
 
         System.out.println(fruits.size()); //size of array list
 
-//        Collections.sort(fruits);
+//        fruits.clear();
 
-        System.out.println(fruits.contains("mango"));
-        System.out.println(fruits.contains("pineapple"));
+//        fruits.removeAll(fruits);
+//        Collections.sort(fruits);
+//
+//        System.out.println(fruits.contains("mango"));
+//        System.out.println(fruits.contains("pineapple"));
+
+        if (fruits.size() <= 0){
+            System.out.println("Deleted all fruits");
+        }
+
 
         for (String fruit : fruits){ //read elements in an arrayList
             System.out.println(fruit);
+
         }
 
 //        int[] numbers = new int[5];//array

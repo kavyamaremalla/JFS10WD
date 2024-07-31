@@ -534,7 +534,7 @@ Composition : part-of (house and room, house is destroyed -> room will also be d
 
 Task : try to get practical example of Association, Aggregation & Composition
 
-Exception handling :
+Exception handling : Exception hierarchy
 
 technically, throw an exception -> when you expect some error in the program
 	can't have multiple try blocks but can have multiple catch blocks -> in single try catch
@@ -557,8 +557,9 @@ Collections : framework of Java, which stores/manipulates group of objects.. Col
 	-> Book/Coin Collection
 	-> it provides interfaces(List, Set, Queue, Dequeue, Map) & classes to perform data operations
 
-Iterable (interface) > Collection(Interface)
-				Under coll	-> List (interface) : linkedlist, arraylist..
+Hierarchy : 
+Iterable (interface) -> Collection(Interface)
+				Under collec -> List (interface) : linkedlist, arraylist..
 							-> Queue (interface) -> Dequeue(interface)
 							-> Set(interface) -> Sorted set(interface)
 							-> Map (interface)
@@ -574,4 +575,32 @@ List
 		. follows insertion order
 		. Collections.sort(nameOfList)	
 		. size of arraylist
-		. contains -> search an object in an arrayList				
+		. contains -> search an object in an arrayList	
+		. remove(index number)	
+		. clear / removeAll 
+		. add object at particular index position	
+		. allows null elements
+
+	Linked List
+		. creation
+		. adding elements
+		. print elements in list using iterator
+
+  //loose coupling & tight coupling
+  hash & toString.
+
+  	HashSet -> follows hashing mechanism	
+  		. creating & adding elements
+  		. allows null values
+  		. unique elements, no duplicates
+  		. no insertion order, based on hash of objects it inserts
+  		. removeIf, remove, removeAll
+  	LinkedHashSet 
+  		. no duplicates allowed
+  		. insertion order	
+  	TreeSet	
+  		. ascending order
+  		. no duplicates
+  		. no null values allowed
+  		. uses comparable, only the comparable objects are allowed
+  	Queue & Priority Queue :	
