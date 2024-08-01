@@ -563,6 +563,7 @@ Iterable (interface) -> Collection(Interface)
 							-> Queue (interface) -> Dequeue(interface)
 							-> Set(interface) -> Sorted set(interface)
 							-> Map (interface)
+							-> stack
 List 
 
 	ArrayList
@@ -593,7 +594,7 @@ List
   		. creating & adding elements
   		. allows null values
   		. unique elements, no duplicates
-  		. no insertion order, based on hash of objects it inserts
+  		. no insertion order, based on hash of objects it inserts & displays the values
   		. removeIf, remove, removeAll
   	LinkedHashSet 
   		. no duplicates allowed
@@ -603,4 +604,39 @@ List
   		. no duplicates
   		. no null values allowed
   		. uses comparable, only the comparable objects are allowed
-  	Queue & Priority Queue :	
+Queue & Priority Queue :	
+		. FIFO -> First In First Out
+		. create & adding elements to queue
+		. read queue
+		. stores in ascending order, allows duplicates
+		. doesn't allow null
+		. pull, element, remove, add, peek
+
+Deque & Array Deque : Double ended queue
+		. LIFO -> Last In First Out	 & FIFO -> First In First Out
+		. we can add/remove elements from both sides
+		. insertion order
+		. null values not allowed
+		. duplicates are allowed
+		. pollFirst, pollLast, removeFirst, removeLast, addFirst, addLast
+
+Stack :
+		. LIFO -> Last In First Out		
+		. push & pop
+		. insertion order
+		. duplicates & null values are allowed
+		. remove, removeAt, add, addAt etc
+
+Map : put, remove, keySet, entrySet, get(key) = value, map.values, contains, isEmpty, size, replace
+
+	hashMap: internal working of a hashmap
+
+	. keys and values pair
+	. no order, based on hashing it gives result
+	. duplicates are not allowed, duplicate values can be allowed
+	. you can update value while creation itself
+	. allows null key and null values
+
+	linkedHashMap -> Map + hashmap : allows null key and null values, follows insertion order
+	TreeMap -> Map + sorted map : doesn't allow any null keys and null values.
+

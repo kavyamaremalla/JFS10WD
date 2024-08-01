@@ -48,7 +48,7 @@ public class SetDemo {
         treeSet.add("rama");
         treeSet.add("vishal");
         treeSet.add("rama");
-        treeSet.add("apple");
+        treeSet.add("apple"); //apple, rama, vishal
 //        treeSet.add(null);
 
 //        System.out.println(treeSet.pollFirst());//removes first element

@@ -60,5 +60,18 @@ public class LinkedListDemo {
         for(Bike bikeObj : bikes){
             System.out.println(bikeObj);
         }
+
+//        Parent parentA = new ChildA();//loose coupling
+//        ChildB childA = new ChildA(); //tight coupling
+//
+//        Parent parentB= new ChildB();
+//
+//        Parent parent;
+//
+//        parent = new ChildA or new ChildB;
+//
+//        Vehicle bike1 = new Bike();
+
+
     }
 }
