@@ -622,21 +622,67 @@ Deque & Array Deque : Double ended queue
 
 Stack :
 		. LIFO -> Last In First Out		
-		. push & pop
+		. push & pop, top
 		. insertion order
 		. duplicates & null values are allowed
 		. remove, removeAt, add, addAt etc
 
-Map : put, remove, keySet, entrySet, get(key) = value, map.values, contains, isEmpty, size, replace
+Map : stores elements on form of key, value pairs called entries.
+
+put, remove, keySet, entrySet, get(key) = value, map.values(), contains, isEmpty, size, replace
 
 	hashMap: internal working of a hashmap
 
 	. keys and values pair
 	. no order, based on hashing it gives result
-	. duplicates are not allowed, duplicate values can be allowed
+	. duplicates keys are not allowed, duplicate values can be allowed
 	. you can update value while creation itself
 	. allows null key and null values
 
 	linkedHashMap -> Map + hashmap : allows null key and null values, follows insertion order
+
 	TreeMap -> Map + sorted map : doesn't allow any null keys and null values.
 
+02/08/24 :
+
+toString, hashcode and equals
+
+	toString -> every obj inherits this method through Object.java
+	returns string rep of an object
+	returns hash of the object
+
+	hashCode -> memory of object
+
+	equals -> override hash and equals
+
+Multithreading :
+
+thread -> extending thread & implementing Runnable
+
+thread life cycle -> new, run, -> either wait/sleep or finish execution	
+
+practical examples on threads
+	if threads wait for each other -> synchronous communication
+	if threads don't wait & run parallely -> asynchronous communication
+
+Thread.sleep, wait, Thread.notifyAll, see other thread methods like join, priorities(1-10, 10 being the highest) etc
+synchronized keyword -> to make sure our threads run synchronously, dead lock scenario
+
+Java 8 -> advanced Java :
+
+	Lambda Expressions,
+	Method References,
+	Functional Interfaces,
+	Stream API, 
+	default methods,
+	Optional.class,
+	forEach,
+	Collectors Class
+	Date & Time changes
+
+Functional Interface(FI) :
+	Single Abstract Method
+	@FunctionalInterface -> extends other interface only if it has a single abstract method
+		a FI can extend non-FI as well
+		a FI can extend other FI
+	(Bi)Consumer, (Bi)Predicate, (Bi)Function, Supplier	

@@ -1,8 +1,8 @@
-public interface AnimalInterface {//interface
+public interface AnimalInterface extends FunctionalInterfaceDemo{//interface
 
     int x = 1;
 
-     void sleep();//normal method
+     void sleep();//abstract method
 
 
     //abstract method
