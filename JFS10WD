@@ -657,7 +657,7 @@ toString, hashcode and equals
 
 Multithreading :
 
-thread -> extending thread & implementing Runnable
+thread -> extending thread & implementing Runnable/Callable
 
 thread life cycle -> new, run, -> either wait/sleep or finish execution	
 
@@ -665,8 +665,9 @@ practical examples on threads
 	if threads wait for each other -> synchronous communication
 	if threads don't wait & run parallely -> asynchronous communication
 
-Thread.sleep, wait, Thread.notifyAll, see other thread methods like join, priorities(1-10, 10 being the highest) etc
+Thread.sleep, wait, Thread.notifyAll, see other thread methods like join, priorities(1-10, 10 being the highest), yield, stop etc
 synchronized keyword -> to make sure our threads run synchronously, dead lock scenario
+s
 
 Java 8 -> advanced Java :
 
@@ -681,8 +682,32 @@ Java 8 -> advanced Java :
 	Date & Time changes
 
 Functional Interface(FI) :
-	Single Abstract Method
+	Single Abstract Method (SAM)
 	@FunctionalInterface -> extends other interface only if it has a single abstract method
 		a FI can extend non-FI as well
 		a FI can extend other FI
 	(Bi)Consumer, (Bi)Predicate, (Bi)Function, Supplier	
+
+05/08/24 :
+
+Lambda Expressions : symbol ->
+			To write clear anonymous functions on a SAM interfaces, we use lambda
+			no need to write return keyword if you have single line of implementation, for multiple lines we have to use a return keyword in lambda.
+			forEach -> lambda
+
+Streams API : on any collection, to process data we use streams API
+
+Predicate  : checks conditions just like your if condition, to filter values based on condition
+	-> boolean test method
+	-> negate
+	-> test
+Function	: takes and i/p and gives some o/p, to map/transform data input to out put	
+	-> apply
+	-> define data types in function
+Consumer : accepts parameter and doesn't return anything.. printing, saving, processing data without expecting o/p
+	-> accept
+Supplier : no i/p only o/p, generate values
+	-> get
+UnaryOperator -> o/p and i/p type should be same
+Bi -> two i/ps	
+

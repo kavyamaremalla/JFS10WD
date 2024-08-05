@@ -21,7 +21,8 @@ class NumberThread extends Thread{
 
     public void run() {
         for (int i = 1 ; i <= 5; i ++){
-            sharedResource.printNumber(i);
+            sharedResource.printNumber(i);//comment this and uncomment below line to make async call
+//            System.out.println(i);
             try {
                 Thread.sleep(2000); //2 seconds or 2000 milli seconds
             } catch (InterruptedException e) {
@@ -42,7 +43,8 @@ class LetterThread extends Thread{
     public void run() {
 
         for (char c = 'A'; c <= 'E'; c ++){
-            sharedResource.printLetter(c);
+            sharedResource.printLetter(c); //comment this and uncomment below line to make async call
+//            System.out.println(c);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
