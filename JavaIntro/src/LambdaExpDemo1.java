@@ -40,7 +40,7 @@ class LambdaForEachDemo{
 //        stringList.forEach(name -> System.out.println(name.toUpperCase()));
 
         Stream<String> nameStream = stringList.stream().filter(name -> name.length() > 4);
-               nameStream.forEach(name -> System.out.println(name));
+               nameStream.forEach(System.out::println);
 
         stringList.stream().filter(name -> name.length() > 4)
                 .forEach(result -> System.out.println(result)); // equivalent to line 42 and 43

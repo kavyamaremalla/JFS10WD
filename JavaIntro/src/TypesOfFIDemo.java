@@ -27,7 +27,7 @@ class FunctionDemo{
 
 
         String result = function.apply(15);
-
+        
         System.out.println(result);
 
         Function<Integer, Integer> square = num -> num * num;
