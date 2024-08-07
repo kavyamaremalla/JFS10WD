@@ -5,10 +5,31 @@ public interface AnimalInterface extends FunctionalInterfaceDemo{//interface
      void sleep();//abstract method
 
 
+    default void add(){ //default method
+        System.out.println("Inside default method");
+    }
+
+    static void sum() { //static
+        System.out.println("Inside static method");
+    }
+
     //abstract method
-      void animalSound(String a, int b);
+    void animalSound(String a, int b);
 
 
+}
+
+class ImplementedClass implements AnimalInterface{
+
+    @Override
+    public void sleep() {
+
+    }
+
+    @Override
+    public void animalSound(String a, int b) {
+
+    }
 }
 
  interface AnimalInterface1 {//interface

@@ -29,7 +29,7 @@ public class MethodReferencesDemo {
        ApplyInterface anApplyInterface1 = demo::method1;
        anApplyInterface1.apply();
 
-        BiFunction<Integer, Integer, Integer> add = Arithmetic::add;
+        BiFunction<Integer, Integer, Integer> add = Arithmetic::add; // inbuilt FI
         int result = add.apply(5, 6);
         System.out.println(result);
     }
