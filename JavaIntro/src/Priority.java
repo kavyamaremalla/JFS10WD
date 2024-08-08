@@ -1,14 +1,19 @@
 public enum Priority {
 
-    LOW,
-    Medium,
-    high,
-    Critical,
+//    LOW,
+//    Medium,
+//    high,
+//    Critical,
     Sunday,
     Monday,
     Tuesday,
-    Wednesday
+    Wednesday,
 
+    Thursday,
+
+    Friday,
+
+    Saturday
     //All constants are by default public, static, final
 }
 
