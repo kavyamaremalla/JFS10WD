@@ -802,7 +802,7 @@ Switch expressions -> Java 13 & 14, we have yield..
     -> lambda replacement of yield & logic and multiple statements with lambda & yield
 
 Date & Time API : LocalDate, LocalTime, LocalDateTime, DateTimeFormatter
-More examples of Patterns
+More examples of Patterns -> HH, MM, ss, yyyy, dd, mm etc
     https://howtodoinjava.com/java/date-time/java8-datetimeformatter-example/
 
     ZonedDateTime
@@ -817,5 +817,21 @@ More examples of Patterns
 
     Temporal Adjusters & Instant -> read about these
 
+09/08/24 :
+
 file handling
+
+    check if file exists or not using fileName
+    if file doesn't exist, we created a file, read contents from file, updated contents, replaced contents
+    If file name already exists and if we create another file using same name in same directory it gives run time exception.
+
+ try with resources
+ AutoCloseable
+
 sealed and non-sealed
+
+    sealed -> can be extened only by sub classes that are defined by permits keyword
+    non-sealed -> a subclass of a sealed class which is open for extension
+    final -> can't extend by any other class
+
+CodeKata & WebKata -> how to solve    
