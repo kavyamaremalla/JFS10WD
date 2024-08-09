@@ -723,7 +723,7 @@ IntPredicate, DoubleSupplier etc ->  you can define i/p & o/p for those predefin
  -> map(function)
  -> Collections.reverseOrder, sort collections
  -> min value, max value
- -> Optional class 	
+ -> Optional class -> if you are not sure if the result is present or not.
  	-> get, comparator, isPresent, isEmpty, orElse
 
 Streams.reduce -> try to read about this
@@ -731,9 +731,91 @@ Streams.reduce -> try to read about this
 Method References : you can replace your lambda with method references, applicable on FI only
 	1. reference to a static method
 	2. ref. to constructor
-	3. ref. to an instance method 	
+	3. ref. to an instance/non-static method 	
 Practical examples for all above
 
 Callable -> similar to Runnable.. Callable returns result & throws a checked exception if it couldnot find the result.
 Future -> async computation's result
+    -> single task execution & blocking (block result and proceed) 
+        Ex : fetching data from remote server
 
+07/08/2024 :
+
+    Completable Future  -> Future + Completion Stage 
+     Completable Future -> implementation of future with some additional asynch method computations.
+     Completion Stage -> responsible for asynch communication
+        ->nonblocking, chaining & composition(asynch data processing pipeline)
+
+Private methods in interface
+    -> as part of Java 8, we have default & static keywords/methods in an interface, by default all methods are public
+
+    -> private methods can't be abstract
+    -> only in other methods of that particular interface, you can call private methods
+    -> pvt static method can be used inside other static methods 
+    -> pvt non-static methods can be used in any other static/default methods in interface
+
+-> here common methods in two interfaces problem can be overcomed by calling the super method using interface name
+    
+    @Override
+    public void method2() {
+        CustomInterface.super.method2();
+    }
+
+Var keyword -> common datatype for all values, JC(java compiler) will determine the type of data based on value of data.
+
+    var age = 7.02d;
+
+    var name = "John";
+
+    var map =new HashMap<String, Integer>(); // applicable to all collections
+
+   Drawbacks :
+   
+    int x ;  x = 10;
+
+   1. var y ; y = 15; -> compilation error
+   2. can't use this as a global variable, method parameter, return type
+   3. can't assign null as value
+
+
+Text blocks from Java 10-> replaces \n with """ quotes. 
+
+Records from Java 14 -> parameterized constructor, getter, toString, hash and equals
+    By default these records are immutable
+
+entity or POJO -> Plain Old Java Object/ DTO -> Data Transfer Object    
+
+08/08/24:
+
+Collectors API & Immutable Collections : from Java 9
+
+    -> Collections.unmodifyableList -> allow null values
+        can modify your original collection
+    -> List.of/Map.of/Map.ofEntries --> immutable collections -> no null values allowed
+        can't modify, only read/search
+
+-> Stream.of/Stream.ofNullable/takeWhile/dropWhile
+
+Switch expressions -> Java 13 & 14, we have yield..
+
+    -> yield, some logic before yield
+    -> lambda replacement of yield & logic and multiple statements with lambda & yield
+
+Date & Time API : LocalDate, LocalTime, LocalDateTime, DateTimeFormatter
+More examples of Patterns
+    https://howtodoinjava.com/java/date-time/java8-datetimeformatter-example/
+
+    ZonedDateTime
+    LocalDateTime conversions
+    ChronoUnit
+    Period -> deals with date
+    Duration -> deals with time
+
+    Negative : start < end
+    Zero : start = end
+    Positive : start > end
+
+    Temporal Adjusters & Instant -> read about these
+
+file handling
+sealed and non-sealed
