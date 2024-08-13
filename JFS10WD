@@ -834,4 +834,74 @@ sealed and non-sealed
     non-sealed -> a subclass of a sealed class which is open for extension
     final -> can't extend by any other class
 
-CodeKata & WebKata -> how to solve    
+CodeKata & WebKata -> how to solve  
+
+12/08/24 :  
+
+Types of Classes :
+
+    static, final, inner class, pojo class, singleton class, abstract class, concrete class etc
+
+generics : parameterized types, to allow any type of object
+T - type
+E - element
+K - key
+N - number
+V - value
+
+use cases of generics : code resue and type safety
+
+Comparable and comparator
+
+read about garbage collection, finalize in GC and memory allocation in jvm
+
+13/08/24:
+
+HTML -> Hyper Text Markup Language
+
+VS code installation, setup, download extensions, creating files/folders.
+
+html tags/elements -> for formatting and displaying content on a web page
+    -> opening tag(<button>), content, closing tag(<button/>)
+    -> unclosed tags(<br content/>, <hr>)
+
+html -> root for html page
+head -> info about document just like import in java
+body -> content you show in your website
+
+attributes -> lang="en"    
+
+<title> name for your web page
+
+Header tags :
+
+<h1 to h6 id="heading"> content here <h1 to h6/>
+<p> -> paragraph
+<hr> -> horizontal line
+<pre> -> display content with spaces and line changes
+
+Inline CSS -> inside the start tag
+
+Styles -> font-family,Font-size -> 100% -> 16px
+Colors -> text clr, bg clr, rgb(red, green, blue), hexadecimal(hex), hsl and hsla(hue, saturation, lightness, alpha)
+    hue -> 0 to 360
+    sat, lightness -> 0 to 100%
+    alpha -> 0.0 to 1.0
+
+Anchor tag : Links/Buttons etc
+
+    <a href="https://facebook.com">Visit our official facebookpage</a> <br />
+    <a href="mailto:test@gmail.com">Contact us here</a> <br />
+    <a href="mailto:test@gmail.com" title="Mail Us">Contact through mail</a>
+    <!-- tool tip --><br />
+    <a href="https://facebook.com" target="_blank">Visit in new tab</a>
+
+img -> Image tag : absolute url(external links to images) or relative url(inside your folder)
+
+<img src="image path" alt="alternate text">    
+<img src="images/bridge.jpg" alt="A bridge image" style="width: 500px; height: 600px;">
+<img src="images/mountains.jpg" width="500" height="600">
+style -> float:right -> aligning your image
+add link to an image -> inside anchor tag you will place your image
+background image : url() and ctrl this image
+
