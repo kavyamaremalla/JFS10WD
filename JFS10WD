@@ -869,7 +869,7 @@ html -> root for html page
 head -> info about document just like import in java
 body -> content you show in your website
 
-attributes -> lang="en"    
+attributes in your opening tag-> lang="en"    
 
 <title> name for your web page
 
@@ -905,3 +905,49 @@ style -> float:right -> aligning your image
 add link to an image -> inside anchor tag you will place your image
 background image : url() and ctrl this image
 
+internal css -> <style> tag
+
+14/08/24 :
+
+picture -> based on screen size we can change images
+
+Formatting :
+<b>, <i>, <strong>, <em>, <mark>, <del>, <sub>, <sup>, <ins>
+
+Quotation and Citing :
+
+<blockquote cite="yourwebsite">
+<address>
+<abbr> -> abbrevations
+
+favicons : logo of our website near title
+ <head> 
+    <link rel="icon" type="image/x-icon" href="images/bridge.jpg">
+  </head>
+
+Inline CSS, Internal CSS, External CSS
+
+<link rel="stylesheet" href="styles.css">  --> external CSS
+
+Border : space around html element
+padding : space btwn text and border
+margin : space around border
+
+Tables :
+<table>
+<th>
+<tr>
+<td>
+horizontal headers, vertical headers
+colspan
+rowspan
+height, width, table properties
+caption -> table name
+
+Lists :
+
+unordered -> ul -> disc, circle, square, none, nested list
+ordered -> ol -> type = a, A, 1, i, I and start = number/letter, nested list
+descriptive -> dl -> dd, dt
+
+developed a nav bar from ul
