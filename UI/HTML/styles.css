@@ -1,5 +1,5 @@
 /* body{
-    background-color: powderblue;
+   color: blue;
 } */
 
 h2{
@@ -8,9 +8,39 @@ h2{
 
 p{
     color: red;
-    border: 4px double powderblue;
+    /* border: 4px double powderblue;
     padding: 30px 40px ;
-    margin-left: auto;
+    margin-left: auto; */
+}
+
+.type1, .type3 {
+    background-color: yellow;
+}
+
+#type2{
+    background-color: aqua;
+}
+
+/* 
+div{
+    width: 300px;
+    margin: auto;
+} */
+
+div.mycontainer{
+    /* display: flex; */
+    /* width: 100%;
+    overflow: auto; */
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    /* grid-template-rows: 33% 33% 33%; */
+}
+
+.mycontainer > div{
+    /* width: 33%; */
+    /* float: left; */
+    /* display: inline-block; */
+   
 }
 
 table, th, td {

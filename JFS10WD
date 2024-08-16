@@ -950,4 +950,33 @@ unordered -> ul -> disc, circle, square, none, nested list
 ordered -> ol -> type = a, A, 1, i, I and start = number/letter, nested list
 descriptive -> dl -> dd, dt
 
-developed a nav bar from ul
+developed a nav bar from ul, we used property called float
+
+16/08/24 :
+
+div : container and for styling page elements, block-level code
+    float, div class, display :inline-block, flex, grid
+span : line level/in-line container
+
+block line -> p , div etc
+inline -> span, a etc
+
+when you use class in any tag, style with .className to style
+when you use id in any tag, style #idName to style
+
+Generally we maintain single id in a html page and multiple classes
+
+
+Layouts : float, flex, grid
+
+semantic tags : header, footer, nav, section, article, aside, details, summmary, form, table etc
+
+header -> define a header for doc
+nav -> navigation links
+footer -> meta information
+
+Forms : takes input from user and sends to server or backend for processing
+    label -> for, value -> placeholder
+    input -> diff types of i/p, id to map with label, value -> placeholder
+    attributes -> action, target, method (get by default and post -> secured), autocomplete
+    novalidate
