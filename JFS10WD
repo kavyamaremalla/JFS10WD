@@ -980,3 +980,25 @@ Forms : takes input from user and sends to server or backend for processing
     input -> diff types of i/p, id to map with label, value -> placeholder
     attributes -> action, target, method (get by default and post -> secured), autocomplete
     novalidate
+
+ 19/08/24:
+ 
+ Forms : 
+    elements : select, option, selected, size, multiple
+    <textarea name="message" rows="10" cols="30">Please leave message here</textarea> <br>
+    <textarea name="message" style="width: 200px; height: 600px;">Please leave message here</textarea> <br>
+    legend, fieldset, input as list and datalist with options
+    alert
+    input types : date, datetime, color etc
+    i/p restrictions : min, max, size, pattern, placeholder, required
+    readonly, disabled, multiple
+
+box model -> design and layout
+    content, padding, border, margin
+
+Selectors : # -> id
+            . -> class
+            simple, universal (*), grouping selector..
+   
+Dropdowns : position, box-shadow, display, hover, zindex, right, left,cursor: pointer;
+   

@@ -3,7 +3,7 @@
   <head> </head>
   <body>
     <h2>Login Form</h2>
-
+    <!-- 
     <form action="semantics.html" target="_blank" method="post" autocomplete="off" novalidate>
         <label for="username">User Name: </label> <br>
         <input type="email" id="username" name="username" value="john@gmail.com"> <br>
@@ -11,7 +11,75 @@
         <input type="text" id="pwd" name="password" value="your_password"> <br> <br>
 
         <input type="submit" value="Submit">
-    </form>
+    </form> -->
 
+    <!-- <form action="semantics.html">
+      <label for="cars">Choose car : </label> <br>
+      <select id="cars" name="cars" size="3" multiple>
+          <option value="kia">Kia</option>
+          <option value="tata" selected>Tata</option>
+          <option value="maruthi">Maruthi</option>
+          <option value="bmw">BMW</option>
+      </select> -->
+
+    <!-- <input list="browsers" name="browsers">
+      <datalist id="browsers">
+        <option value="Chrome"></option>
+        <option value="Firefox"></option>
+        <option value="Edge"></option>
+      </datalist>
+      <input type="submit">
+  </form> -->
+
+    <!-- <form action="semantics.html" >
+    <fieldset>
+      <legend>Feedback Form</legend>
+    <label for="username">User Name: </label> <br>
+    <input type="email" id="username" name="username" value="john@gmail.com"> <br>
+    <label for="pwd">Password: </label><br>
+    <input type="text" id="pwd" name="password" value="your_password"> <br> <br>
+
+    <textarea name="message" style="width: 200px; height: 100px;">Please leave message here</textarea> <br>
+
+    <input type="submit" value="Submit">
+
+    <button type="button" onclick="alert('Hello, welcome!')">Click here!</button>
+  </fieldset>
+</form> -->
+
+    <form action="semantics.html">
+      <label for="username">User Name: </label> <br />
+
+      <input
+        type="number"
+        id="username"
+        name="quantity"
+        min="0"
+        max="100"
+        step="10"
+        value="30"
+        disabled
+      />
+      <br />
+
+      <input type="range" min="0" max="50" /> <br />
+
+      <input type="search" /><br />
+
+      <label for="phn">Phone number <span style="color: red;">*</span></label> <br />
+      <input
+        type="tel"
+        id="phn"
+        name="phn"
+        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+        required
+        placeholder="123-45-678"
+      /><br />
+
+      <label for="fname">FirstName</label>
+      <input type="text" id="fname" name="fname" size="10" maxlength="5" minlength="3" autofocus>
+
+      <input type="submit" />
+    </form>
   </body>
 </html>
