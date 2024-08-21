@@ -1001,4 +1001,18 @@ Selectors : # -> id
             simple, universal (*), grouping selector..
    
 Dropdowns : position, box-shadow, display, hover, zindex, right, left,cursor: pointer;
-   
+
+21/08/24 : 
+
+display : inline, block, inline-block
+display : flex, justify-content, flex-direction, flex-wrap, flex-flow -> wrap + direction
+
+CSS positions
+    relative   
+    absolute
+    static
+    fixed 
+
+Media Queries : allow user to apply styles based on size of device
+
+grid 

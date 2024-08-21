@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox Example</title>
+    <style>
+        .container{
+            display: flex;
+            flex-flow: row wrap-reverse;
+            height: 200px;
+            justify-content: center;
+            align-items:center;
+            background-color: lightgray;
+        }
+        .item{
+            background-color: lightblue;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 800px) {
+            .container{
+                flex-direction: column;
+                flex-wrap: wrap;
+                background-color: aqua;
+            }
+        }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item" style="flex-shrink: 0;">Item 2</div>
+      <div class="item" style="flex-grow: 8;">Item 3</div>
+    </div>
+  </body>
+</html>

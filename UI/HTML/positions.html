@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Positioning Example</title>
+    <style>
+      .static {
+        background-color: lightgreen;
+        position: static;
+        top: 20px;
+        left: 20px;
+        /* text-align: center;
+        display: inline; */
+        
+      }
+
+      .relative {
+        position: relative;
+        background-color: lightblue;
+        top: 20px;
+        left: 20px;
+      }
+
+      .abs {
+        position: absolute;
+        background-color: lightcoral;
+        top: 50px;
+        left: 50px;
+      }
+
+      .fixed{
+        position: fixed;
+        background-color: lightyellow;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="static">Static Box</div>
+    <div class="relative">Relative Box</div>
+    <div class="abs">Absolute Box</div>
+    <div class="fixed">Fixed Box</div>
+  </body>
+</html>
