@@ -1005,7 +1005,8 @@ Dropdowns : position, box-shadow, display, hover, zindex, right, left,cursor: po
 21/08/24 : 
 
 display : inline, block, inline-block
-display : flex, justify-content, flex-direction, flex-wrap, flex-flow -> wrap + direction
+display : flex, justify-content, flex-direction, flex-wrap, flex-flow -> wrap + direction, 
+grid and its properties
 
 CSS positions
     relative   
@@ -1013,6 +1014,15 @@ CSS positions
     static
     fixed 
 
-Media Queries : allow user to apply styles based on size of device
+Media Queries : allow user to apply styles based on size of device : responsive layout
 
-grid 
+22/08/24 :
+
+simple portfolio using html, css
+
+Practical examples on
+RWD -> responsive web design
+
+mobile first approach -> based on screen size, @media..
+
+Tailwind css, bootstrap -> layout, grid, container, breakpoints, colors etc
