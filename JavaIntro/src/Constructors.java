@@ -1,5 +1,5 @@
 public class Constructors {
-
+//what this class does
     int x ;
     //Encapsulation
     private String name;
@@ -68,13 +68,18 @@ public class Constructors {
 
     }
 
-
-    private void createConstructorPersondetails(){
+    /**
+     *
+     */
+    private int createConstructorPersondetails(String name){
         Constructors constructors1 = new Constructors(6, "John", false,10987.67d);
+        return 0;
 
     }
+   //single line comment
 
-    //n methods can call the createConstructorPersondetails
+  /*  n methods can call the
+            createConstructorPersondetails*/
 
 
 }

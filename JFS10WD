@@ -1013,6 +1013,7 @@ CSS positions
     absolute
     static
     fixed 
+    sticky
 
 Media Queries : allow user to apply styles based on size of device : responsive layout
 
@@ -1025,4 +1026,34 @@ RWD -> responsive web design
 
 mobile first approach -> based on screen size, @media..
 
-Tailwind css, bootstrap -> layout, grid, container, breakpoints, colors etc
+Tailwind css, bootstrap -> layout, grid, container, breakpoints(6 by default -> sm, md, xs, lg, xl, xxl), colors etc
+
+23/08/24  :
+
+sticky in css positioning
+
+CSS overflow :
+    visible -> by default
+    hidden -> extra content will be hidden
+    scroll -> adds a scroll bar along y-axis
+    auto -> if content fits in a box, it will be visible or if content overflows the box it takes scroll
+
+Bootstrap :
+typography
+tables
+alerts
+buttons
+
+progressbars
+spinner
+pagination
+list
+dropdown
+cards
+nav bar
+modal
+carousel
+scrollspy
+flex
+
+
