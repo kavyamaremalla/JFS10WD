@@ -1043,7 +1043,6 @@ typography
 tables
 alerts
 buttons
-
 progressbars
 spinner
 pagination
@@ -1056,4 +1055,42 @@ carousel
 scrollspy
 flex
 
+Deploy thorough git hub -> Jaya Surya has shown the demo
 
+******************* Javascript ********************  27/08/24
+    - dynamic pages creation
+
+  html -> define the content of web pages
+  css -> layout of the webpages
+  js -> program the behaviour of web pages
+
+<script> -> you will write js code, can place it in either head or body
+or directly in browser's console -> you can try js code
+
+How to display :
+
+console.log("Hi, from browser console !") -> system.out.println in java  
+document.getElementById("demo").innerHTML = 5 + 6;
+document.write("Hi")
+window.alert('This takes you to JS display')
+
+vscode-runner -> extension, install to run js code
+
+dom -> document object model
+bom -> browser object model i.e., window..
+
+Variables :
+    var : you can redefine/replace your variables --> old js version --> drawback.. hoisting
+    let : can not redefine (compilation error) but can replace
+    const can not redefine (compilation error), can't replace -> run time error
+
+    typeof variable -> to get data type : let shape = "square";
+                                          console.log(typeof shape);
+
+                         number, string, undefined, boolean
+                                          
+    NaN -> not a number
+
+ deploy site through netlify -> demo by Dhanush
+ 
+ JS Objects :   
