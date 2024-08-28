@@ -330,29 +330,6 @@ Main method:
     void -> no return value to JVM
     main -> name of method
     String[] args -> one argument/parameter of type String array
-
-Git : github, gitlab, bitbucket.. -> distributed version control system
-
-	1. signup
-	2. create a repository
-	3. add files/folders
-
-Bring from your github account to your local machine :	
-
-git clone https://github.com/kavyamaremalla/JFS10WD.git
-
-Add files to github account : Committing to git
-
-	local ->  staging(temporary storage of files to be committed)  -> github account
-
-git status -> file status 
-git add <fileName which you want to send to github account> or for all files -> git add .
-git commit -m "Your Message Here : Reason why you are committing" -> local to staging
-git push -> from staging to github account
-
-git pull -> changes from github  made by others to be in your local machine
-
-
 Keywords
 	void -> no return type
 	static -> memory allocated first to this method
@@ -1057,6 +1034,41 @@ flex
 
 Deploy thorough git hub -> Jaya Surya has shown the demo
 
+
+*************GITHUB****************
+
+
+Git : github, gitlab, bitbucket.. -> distributed version control system
+
+    1. signup
+    2. create a repository
+    3. add files/folders
+
+Bring from your github account to your local machine :  
+
+git clone https://github.com/kavyamaremalla/JFS10WD.git
+
+Add files to github account : Committing to git
+
+    local ->  staging(temporary storage of files to be committed)  -> github account
+
+Install git in local machine -> git bash and git gui
+
+git status -> file status 
+git add <fileName which you want to send to github account> or for all files -> git add .
+git commit -m "Your Message Here : Reason why you are committing" -> local to staging
+git push -> from staging to github account
+
+git pull -> changes from github  made by others to be in your local machine
+
+    branching -> add branch, delete, upstream (local to remote), downstream (remote to local)
+    rebase -> bring changes from remote during conflicts, resolve conflicts and push
+    git fetch vs git pull -> git fetch + git merge
+    pull request/merge request
+    stash -> git stash, list, pop, apply
+    gitignore
+
+
 ******************* Javascript ********************  27/08/24
     - dynamic pages creation
 
@@ -1087,10 +1099,17 @@ Variables :
     typeof variable -> to get data type : let shape = "square";
                                           console.log(typeof shape);
 
-                         number, string, undefined, boolean
+                         number, string, undefined, boolean, object
                                           
     NaN -> not a number
 
  deploy site through netlify -> demo by Dhanush
  
- JS Objects :   
+JS Objects :  Json representation of data : Java Script Object Notation
+json object
+object in an object
+Functions : named functions, functions in an object
+
+
+Javascript Implementation(Operators conditional statements, Switch case)
+Array, String
