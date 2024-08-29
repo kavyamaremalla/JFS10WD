@@ -55,7 +55,20 @@ let lName = "Potter"; //global
 console.log(lName);// we have scope of global and local variables for cont, let
 
 
+let todayDate = new Date("2024-07-27");
+console.log(todayDate);
 
+let str = new Boolean("true");
+console.log(typeof str);
+
+
+console.log(typeof Number("abc"));
+console.log(typeof String(123));
+console.log( Math.log2(4));
+String(true)
+
+console.log(5+null);
+console.log(("5 " + null));
 
 
 

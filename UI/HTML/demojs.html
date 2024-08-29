@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        console.log("Let's learn JS!")
+      console.log("Let's learn JS!");
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <p id="demo">13</p>
 
     <!-- <p class="index"></p> -->
     <script>
-        document.getElementById("demo").innerHTML = 5 + 6;
-        document.getElementById("demo").style.fontSize = "48px";
-        document.getElementById("demo").style.display = "block"
-     
-        // document.getElementsByClassName("index").innerHTML = 5 + 6;
-        document.write(5 + 6);
-        window.alert('This takes you to JS display')
+      document.getElementById("demo").innerHTML = 5 + 6;
+      document.getElementById("demo").style.fontSize = "48px";
+      document.getElementById("demo").style.display = "block";
+
+      // document.getElementsByClassName("index").innerHTML = 5 + 6;
+      document.write(5 + 6);
+      window.alert("This takes you to JS display");
     </script>
 
-    <br>
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "50% offers"'>
-        Click Me for more offers!
+    <br />
+    <button
+      type="button"
+      onclick='document.getElementById("demo").innerHTML = "50% offers"'
+    >
+      Click Me for more offers!
     </button>
-   <br>
-   <button type="button" onclick='window.alert("Successfully Loggedin!")'>
-   Login here!
-</button>
-</body>
+    <br />
+    <button type="button" onclick='window.alert("Successfully Loggedin!")'>
+      Login here!
+    </button>
+
+
+
+    
+  </body>
 </html>
