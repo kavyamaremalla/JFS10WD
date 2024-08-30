@@ -1062,7 +1062,8 @@ git push -> from staging to github account
 git pull -> changes from github  made by others to be in your local machine
 
     git init
-    branching -> add branch, delete, upstream (local to remote), downstream (remote to local)
+    branching -> add branch, delete, pushing a branch
+    upstream (local to remote), downstream (remote to local)
     rebase -> bring changes from remote during conflicts, resolve conflicts and push
     git fetch vs git pull -> git fetch + git merge
     pull request/merge request
@@ -1129,7 +1130,12 @@ Arrays :
 
     which holds more than one value
     can store multiple datatypes of values
-    sort, reverse, splice, push, pop, shift, unshift, join, concat, flat, slice
-    foreach
+    sort, reverse, splice, push, pop, shift, unshift, join, concat, flat, slice,copywithin
+    foreach ->uses arrow/anonymous function
 
-Javascript Implementation(Operators, conditional statements, Switch case)    
+Javascript Implementation(Operators, conditional statements, Switch case)   -> done
+
+loops -> for, for in, for of, while, do-while 
+filter, map, reduce -> on an array
+
+sets, in javascript
