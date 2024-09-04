@@ -1139,3 +1139,39 @@ loops -> for, for in, for of, while, do-while
 filter, map, reduce -> on an array
 
 sets, in javascript
+
+Maps -> creation : new Map
+        -> through array
+        -> through set
+
+Exception Handling -> 
+    try, catch, finally, throw
+
+Error types ->
+reference error, type error, URI error, Range error, EvalError(old js), syntax error(new js)
+
+this key word :
+this.fName, this.lName
+call, this. -> in html
+apply, bind 
+
+
+04/09/24:
+
+Selecting and Manipulating Elements
+document.queryselector & document.queryselectorAll
+Alert box, confirm box, Prompt box
+What's the DOM and DOM Manipulation
+Append & Appendchild
+get element by Class, tagname & ID
+
+Events : click, alert etc
+
+Array & Object Destructure
+
+    arrays into disctinct variables
+    object properties into distinct variables
+
+Arrow Function, =>
+Rest Operator, : in functions
+Spread Operator : in arrays

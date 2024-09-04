@@ -49,5 +49,11 @@ for (const element of alphabet.entries()) {
 }
 console.log(letters);
 
-letters.clear()
-console.log(letters);
+// letters.clear()
+// console.log(letters);
+
+console.log(letters.has("d"));
+console.log(letters.has("e"));
+
+
+

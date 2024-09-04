@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton"> Give Alert</button> <br> <br>
+
+    <input type="text" id="numberInput" placeholder="Enter any number">
+
+    <script>
+        document.querySelector('#myButton').addEventListener('click', function() {
+            alert('Button is clicked!')
+        })
+
+        document.querySelector('#numberInput').addEventListener('keydown', function (event) {
+            //check if the key is not a number
+            if((event.key < '0' || event.key > '9') && event.key !== 'Backspace' && event.key !== 'Tab'){
+                event.preventDefault();
+                alert('Please enter numbers only.. not an alphabet')
+            }
+        })
+    </script>
+
+</body>
+</html>

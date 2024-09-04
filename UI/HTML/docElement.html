@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  
+  <body>
+   
+    <!-- By Id -->
+    <div id="myId">Let's turn this content to red</div> <br>
+
+    <!-- By Class Name -->
+    <div class="myClass">Let's turn this content to green</div>
+    <div class="myClass">Let's turn this content also to green</div>
+
+    <!-- By Tag Name -->
+    <p>This text will be blue</p>
+    <p>This text will be also blue</p>
+    <p>This text will also turn to blue</p>
+
+    <script>
+        const elementById = document.getElementById('myId');
+        elementById.style.color = 'red';
+
+        const elementByClassName= document.getElementsByClassName('myClass');
+        Array.from(elementByClassName).forEach(ele => ele.style.color = 'green')
+
+        const elementsByTagName = document.getElementsByTagName('p')
+        Array.from(elementsByTagName).forEach(ele => ele.style.color = 'blue')
+        
+    </script>
+  </body>
+</html>
