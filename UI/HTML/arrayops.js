@@ -32,7 +32,7 @@ for (let index = 0; index < numbers.length; index++) {
 
 // cars.forEach(displayNumbers)
 
-// cars.forEach((value) => console.log(value)); //arrow or anonymous function
+cars.forEach((value) => console.log(value)); //arrow or anonymous function
 
 console.log(numbers.join("*"));
 

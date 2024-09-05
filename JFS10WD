@@ -1165,7 +1165,7 @@ What's the DOM and DOM Manipulation
 Append & Appendchild
 get element by Class, tagname & ID
 
-Events : click, alert etc
+Events : click, alert, keypress etc
 
 Array & Object Destructure
 
@@ -1175,3 +1175,23 @@ Array & Object Destructure
 Arrow Function, =>
 Rest Operator, : in functions
 Spread Operator : in arrays
+
+05/09/24 :
+
+Constructors
+
+Getter & Setter
+
+class, Inheritence, extends..
+
+JSON Parse, String to array, Json Stringify
+
+Prototype
+
+Closures : 
+
+Call Back
+
+Introduction to Asynchronous programming
+
+setTimeOut
