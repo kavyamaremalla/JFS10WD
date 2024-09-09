@@ -1199,4 +1199,10 @@ setTimeOut
 06/09/24 :
 
 File REading using normal try-catch
-Overview of  Promises
+Overview of  Promises, settime out in promises as well
+asynch -> make sure funtion returns a promises
+await -> function waits for the promises
+Fetch ->
+Dummy API : https://reqres.in/
+
+Axios -> https://www.npmjs.com/package/axios
