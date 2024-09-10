@@ -1198,7 +1198,7 @@ setTimeOut
 
 06/09/24 :
 
-File REading using normal try-catch
+File Reading using normal try-catch
 Overview of  Promises, settime out in promises as well
 asynch -> make sure funtion returns a promises
 await -> function waits for the promises
@@ -1206,3 +1206,215 @@ Fetch ->
 Dummy API : https://reqres.in/
 
 Axios -> https://www.npmjs.com/package/axios
+
+09/09/24 : *************Databases**************
+
+DB : organized collection of data -> DBMS
+
+Tables -> rows and columns : Structured Query Language (SQL)
+    - MySQL, MS SQL, Postgres, Oracle etc
+
+NoSQL : Collections, Documents, JSON representation
+    - MongoDB, Maria DB, Ibm DB2, Cassandra etc
+
+Types of DBS : relational, distributed, cloud, hierarchal etc    
+
+Data : create, modify, read, delete -> DBMS (communicates btwn users and db)
+
+.sql extension-> to save any SQL file
+
+Installation of SQL WorkBench
+
+Commands
+
+create database DATABASENAME -> to create a db
+drop database DATABASENAME -> to delete a db
+show databases -> will show all existing dbs
+
+create table
+take backup of a table
+creating table from existing table
+drop table
+ALTER ->column level add, modify, delete, add a column at particular place, change column name, change data type of column
+
+Data ->
+
+    create data -> insert
+        Insert into college.student(RollNumber, FirstName, Surname, Email_Address, isCertified)
+        Values (3, "Peter", "Parker", "peter@gmail.com", false);
+
+    read data -> select
+alias  Select count(*) as Certified_Students_Count from student where isCertified = 1;
+
+    update data -> update student set email_address = 'ajsgd@gmail.com', Surname = "Potter" where RollNumber = 1
+
+    delete data
+    Delete from student where RollNumber is null
+
+truncate table ->table structure is preserved, all the data will be deleted
+
+DDL -> Data Definition Language : table level
+    create, alter, truncate, drop table
+DML -> Data Manipulation Language : data level
+    insert, update, delete, select
+
+Constraints
+
+Not null,
+default,
+unique,
+check      
+Auto Increment
+
+Primary key
+
+Foreign key
+
+
+create table personDetails(
+   PersonId int Not Null unique auto_increment,
+         firstname varchar(255),
+         age int Default 18,
+         CHECK (Age >= 18) ,
+         Primary Key(PersonId)
+         ) 
+
+Foreign key :
+
+create table orders(
+        OrderId int not null auto_increment,
+        OrderNumber int not null,
+        PersonId int,
+        Primary Key(OrderId),
+        CONSTRAINT FK_PersonDetailsOrder foreign key(PersonId)
+        references persondetails(PersonId)
+        );
+     
+     Alter table Orders
+     ADD foreign key(PersonId) references persondetails(PersonId)
+
+Records in range
+      select * from persondetails where age between 20 and 30;
+     Not in range :
+         select * from persondetails where age not between 20 and 30;
+
+like :
+      select * from persondetails where age like '28';
+      select * from persondetails where firstname like '%pet%';
+
+distinct & count:
+       select count(distinct(firstname)) from persondetails;   
+
+Extract :
+
+select firstname, right(firstname, 1), left(firstname,3) as ExtractedString
+from persondetails    
+
+select firstname from persondetails
+where right(firstname, 1) = 'r';
+
+select firstname from persondetails
+where substring(firstname, 3, 1) = 't'
+
+
+Order by
+
+select * from persondetails
+order by age desc
+
+select * from persondetails
+order by age asc --> by default even if you don't mention asc
+
+limit and offset
+
+select * from persondetails 
+-- where firstname = 'Peter'  This is how we comment in sql queries
+order by age desc limit 4 offset 3;
+
+select * from persondetails
+order by age desc limit 4
+
+Aggregate functions : min, max, avg, count, sum
+
+Min and max, count
+
+select min(age) as MinAge
+from persondetails;
+
+select max(age) as MaxAge
+from persondetails;
+
+Sum and Avg 
+
+select avg(age) as AvgAge
+from persondetails;
+
+select sum(age) as SumAge
+from persondetails;
+
+group by
+
+select count(distinct(firstname)), age
+from persondetails
+group by age;
+
+select count(firstname), age
+from persondetails
+group by age;
+
+Having clause : aggregare functions ., where can't be used
+
+select count(distinct(firstname)), age
+from persondetails
+group by age
+having count(PersonId) > 1
+order by count(PersonId) asc;
+
+IN : to bring multiple values in Where condition, you can also write a query
+
+select * from orders
+where PersonId in 
+(select PersonId from persondetails);
+
+Operators :
+
+select * from persondetails where age <= 20 or age != 45 and firstname not in ('Peter', 'Jill');
+
+SQL : select top(3) * from persondetails;
+
+
+joins : inner, full/cross/cartesian/join, left, right
+
+
+select pd.*, o.*
+from persondetails pd
+inner join orders o
+on pd.PersonId = o.PersonId;
+
+select pd.*, o.OrderId, o.OrderNumber, o.dateOfPurchase
+from persondetails pd
+inner join orders o
+on pd.PersonId = o.PersonId
+inner join person
+on pd.PersonId = person.Id
+where pd.PersonId > 1;
+
+
+union & union all -> on two select queries
+
+select * from persondetails where PersonId > 103
+union 
+select * from persondetails where PersonId < 50
+
+index
+
+create index idx_fName
+on persondetails(firstname);
+
+drop index idx_fName on persondetails
+
+coalesce : select PersonId, coalesce(firstname, isMarried) as Name from persondetails;
+
+SP
+
+JDBC
