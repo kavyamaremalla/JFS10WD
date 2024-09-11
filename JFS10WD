@@ -1298,11 +1298,11 @@ Records in range
      Not in range :
          select * from persondetails where age not between 20 and 30;
 
-like :
+like Operator:
       select * from persondetails where age like '28';
       select * from persondetails where firstname like '%pet%';
 
-distinct & count:
+distinct & count keywords:
        select count(distinct(firstname)) from persondetails;   
 
 Extract :
@@ -1376,7 +1376,7 @@ select * from orders
 where PersonId in 
 (select PersonId from persondetails);
 
-Operators :
+Operators : >, <, >=, <=, = , !=, and, or
 
 select * from persondetails where age <= 20 or age != 45 and firstname not in ('Peter', 'Jill');
 
@@ -1415,6 +1415,79 @@ drop index idx_fName on persondetails
 
 coalesce : select PersonId, coalesce(firstname, isMarried) as Name from persondetails;
 
-SP
+11/09/24 : Read about transaction levels, ACID properties
 
-JDBC
+TCL : Transaction query Language
+
+    SET transaction isolation level serializable;
+        Begin / Start Transaction;
+
+    -- write any queries, insert query 
+    Savepoint savepoint1;
+
+    update query;
+
+    Savepoint savepoint2;
+
+    COMMIT;
+
+    -- Rollback : insert --> rollback will be delete
+    Rollback to savepoint1
+
+DCL : Data Control Language -> Grant to give persmissions to user
+
+Revoke to rollback permissions
+    GRANT ALL PRIVILEGES ON database_name.* TO 'username@host';
+
+    REVOKE ALL PRIVILEGES ON database_name.* FROM 'username@host';
+
+SP
+    -- 100 lines of code and you want to execute it many times : Stored Procedures
+    -- save this 100lines of code as an SP, Call SP_NAME
+
+JDBC : Java Database Connectivity
+
+jar -> package -> classes -> functions/methods
+
+maven
+
+*******Mongo DB*****
+
+NoSQL DB : 
+
+databases -> dbs
+
+tables -> Collections
+rows and columns -> documents/records
+
+Download 
+    Server : https://www.mongodb.com/try/download/community
+    Shell : https://www.mongodb.com/try/download/shell
+ GUI: 
+    Compass : https://www.mongodb.com/try/download/compass
+    Robo mongo : https://robomongo.org/
+
+show dbs
+switch to db : use dbName -> uses db if already exists or creates one if no db exists
+delete db ->  db.dropDatabase();
+
+show collections
+db.createCollection("home_loan") -> creates a collection in db
+delete a collection : db.home_loan.drop();
+
+Insert :
+
+    one : db.loan.insertOne({name : "Home_Loan", tenure : 15, dateOfOpening : Date(), isDocumented : true})
+    db.loan.insertMany([{name : "Home_Loan", tenure : 30, dateOfOpening : Date(), isDocumented : true}, {name : "Home_Loan", tenure : 25, dateOfOpening : Date(), isDocumented : false}])
+
+Read : db.collectionName.operation
+    
+    db.loan.find() -> all documents
+    db.loan.findOne() -> first document
+    db.loan.find({tenure : 15}) -> where condition in bracket where tenure=15
+    db.loan.find({tenure : 15, name : "Home_Loan"}) where tenure = 15 and name = home_loan
+
+    db.loan.find({}, {tenure : 15}) //projection object
+    db.loan.find({}, {tenure : 15, _id:0})
+    db.loan.find({}, {tenure : 15, _id:1})
+    db.loan.find({}, {tenure : 0, _id:1}) -> all details
