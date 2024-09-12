@@ -1491,3 +1491,120 @@ Read : db.collectionName.operation
     db.loan.find({}, {tenure : 15, _id:0})
     db.loan.find({}, {tenure : 15, _id:1})
     db.loan.find({}, {tenure : 0, _id:1}) -> all details
+
+12/09/24 :
+
+Update : 
+    db.loan.updateOne({isDocumented : false}, {$set:{tenure : 20}}) : modifies first matched record
+
+    db.loan.updateMany({isDocumented : true}, {$set:{tenure : 20}}) : modifies all matched records
+
+    db.loan.updateMany({isDocumented : true}, {$set:{tenure : 20, lastModifiedDate : Date()}}) : modifies all matched records and also adds a new field to existing doc
+
+    db.loan.updateMany({tenure : 15}, {$set:{lastModifiedDate : Date()}}, {upsert : true}) : inserts records if there is no record, else modifies existing record
+
+ Operators : https://www.mongodb.com/docs/manual/reference/operator/update/
+
+    db.loan.updateMany({}, {$inc:{tenure : 5}})
+rename, unset, currentDate
+
+Array Operators :  https://www.mongodb.com/docs/manual/reference/operator/update-array/
+
+     db.loan.updateMany({}, {$addToSet: {insurance : {$each : ["Axis", "HDFC", "ICICI"]}}})
+
+     db.loan.updateMany({},{$push : {insurance : "Max"}})
+     db.loan.updateMany({},{$pop : {insurance : -1}}) //removes 0th index
+     db.loan.updateMany({},{$pop : {insurance : 1}}) //removes last index
+
+     Adding/Updating with Map
+
+      db.loan.updateMany({},{$set: {myMap: {key1 : "value1", key2 : "value2"}}})
+      db.loan.insertOne({myMap: {key1 : "value1", key2 : "value2"}})
+
+ Delete Operations :
+ 
+     db.loan.deleteOne({}) //first record
+     db.loan.deleteOne({name : 'Vehicle_Loan'}) //matching the name, deletes first matched
+     db.loan.deleteMany({tenure:30}) // matching all records
+     db.loan.deleteMany({})  //delete all objects
+Index :
+
+db.loan.createIndex({'productprice':1}) , 1 means asc order and -1 is desc order
+ db.loan.getIndexes()
+
+  db.loan.find({product_price : 911}).explain("executionStats") -> check totalDocsExamined before index creation and after index creation
+
+
+  Comparison : https://www.mongodb.com/docs/manual/reference/operator/query-comparison/
+
+  db.loan.find({product_price : {$ne : 690}})
+  db.loan.find({product_price : {$eq : 690}})
+  db.loan.find({product_price : {$lt : 690}})
+  db.loan.find({product_price : {$lte : 690}})
+  db.loan.find({product_price : {$gt : 690}})
+  db.loan.find({product_price : {$gte : 690}})
+
+  db.loan.find({marks : {$in:[82]}}) //array in
+  db.loan.find({marks : {$nin:[82]}}) //not in array
+
+
+Aggregrate Functions/Operators/Pipelines :
+
+    var/const matchProdPrice = db.loan.aggregate([{$match:{product_price:{$eq:474}}}])
+        matchProdPrice
+
+     db.loan.aggregate([{$match:{product_price:{$gt:474}}}, {$count:"totalQuantity"}])
+     ///stores count as totalQuantity and give you result
+
+     db.loan.aggregate([{$limit : 3}]) //gives first 3
+
+    db.loan.aggregate(([{$match: {product_price : {$gt: 70}}},{$group : {_id:"$product_material", totalPrice:{$sum: {$multiply:["$product_price", "$quantity"]}}}}, {$sort: {totalPrice: -1}}, {$limit:5}, {$project: {"_id":0}}]))
+    
+    or
+
+    db.loan.aggregate(([{$match: {product_price : {$gt: 70}}},{$group : {_id:"$product_material", totalPrice:{$sum: {$multiply:["$product_price", 2]}}}}, {$sort: {totalPrice: 1}}, {$limit:5}]))   
+
+
+    db.loan.aggregate([{$lookup:{from:"OtherCollection", localField:"_id", foreignField:"_id", as:"Details of the product"}}]) //joining other collection
+
+
+const priceOperation = db.loan.find().map(function(e){return e.product_price * 2}).toArray();
+priceOperation.length -> gives you length of array
+for(const element of priceOperation){print ("Product Price double will be : " + element)}
+
+Validation in mongoDb, validate your schema: https://www.mongodb.com/docs/compass/current/validation/
+
+registering student -> age of student dob year > 2010, int.. mobile num is mandatory, address.. validation Level : warn or error..
+
+    json/bson javascript/ binary java script
+
+db.createCollection("student", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["name", "year", "mobileNumber"],
+         properties: {
+            name: {
+               bsonType: "string",
+               description: "Must be a string and this is a required field"
+            },
+            year: {
+               bsonType: "int",
+               minimum: 2015,
+               maximum: 3000,
+               description: "Must be an integer. This is the date of birth year and should be > 2014 and < 3000"
+            },
+            mobileNumber: {
+               bsonType: "long"
+            },
+            address: {
+               bsonType: "string"
+            }
+         }
+      }
+   }, validationAction:"error" / "warn"
+})
+
+Example :
+
+ db.student.insertOne({age : 15, dateOfJoining : Date(), isCertified : true, mobileNumber : NumberLong("9876454"), year :  2016})
