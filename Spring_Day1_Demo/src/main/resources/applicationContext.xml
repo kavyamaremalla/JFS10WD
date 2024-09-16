@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <context:property-placeholder location="application.properties"/>-->
+<!--    <context:component-scan base-package="com.spring.demo"/>-->
+<!--    <bean id="myWish" class="com.spring.demo.HappyWishService">-->
+<!--    </bean>-->
+
+<!--    <bean id="myCricketCoach" class="com.spring.demo.CricketCoach" init-method="startUpMethod" destroy-method="destroyMethod" scope="prototype" >-->
+<!--        <constructor-arg ref="myWish"/>-->
+<!--        <property name="wishService" ref="myWish"/>-->
+<!--        <property name="email" value="${email}"/>-->
+<!--    </bean>-->
+
+    <bean id="myFootBallCoach" class="com.spring.demo.FootBallCoach">
+
+    </bean>
+</beans>

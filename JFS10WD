@@ -1527,6 +1527,7 @@ Array Operators :  https://www.mongodb.com/docs/manual/reference/operator/update
      db.loan.deleteOne({name : 'Vehicle_Loan'}) //matching the name, deletes first matched
      db.loan.deleteMany({tenure:30}) // matching all records
      db.loan.deleteMany({})  //delete all objects
+
 Index :
 
 db.loan.createIndex({'productprice':1}) , 1 means asc order and -1 is desc order
@@ -1608,3 +1609,110 @@ db.createCollection("student", {
 Example :
 
  db.student.insertOne({age : 15, dateOfJoining : Date(), isCertified : true, mobileNumber : NumberLong("9876454"), year :  2016})
+
+ 13/09/24 :
+
+ Web Application Architecture :
+
+    single-tier : MS Word -> ui, business logic, data storage -> single layer.. no separate client or server
+    two-tier : client(user interface) --> interacts with server(logic) and gets a response back
+       client : web browser , server : db
+
+Monolithic vs Microservice Architecture :
+
+Monolithic:   a single application bundled with many services
+                    -> search of products, payment, view orders etc : single service
+                    -> tight coupling
+
+Microservices : divided into n number of services/chunks
+                    -> search of products, payment, view orders etc :: separate services
+                    -> loose coupling
+
+Intro to Rest : Representation State Transfer
+
+Rest, Soap, Graph QL etc
+
+    architectural style to design your n/w apps
+Principles :
+
+    Stateless : every req from client to server should contain all req info
+    Cacheable : 24hrs (hit API -> gives get response)
+
+Communication btwn client and server :
+
+Client Requests ->
+
+    GET ap/users/1 HTTP1.1
+    host : example.com
+
+Server Response ->
+   
+   HTTP/1.1 200 Ok
+   content-Type : application/json
+
+   {
+    "id" :1,
+    "name" : "john"
+   } // POJO,  DTO, Entity
+
+API : Application Program Interface
+
+    GET
+    POST
+    PUT
+    Patch
+    DELETE
+
+Java Containers & Servlet :
+
+JAVA EE -> JSP, Servlets ( Lifecycle of Servlet --- >
+        init () -> initialize servlet, 
+        service () -> doGet, doPost, 
+        destroy () -> cleans up the servlet)
+
+Servlet Container : something which interacts with your servlets
+    
+    -> manage lifecycle
+    -> map client req to appropriate servlet
+    -> handles security, multi threading, session management
+
+   1. Apache Tomcat
+   2. Jetty Server 
+
+Software Design Patterns :
+    Some common solutions to software design problems
+    Gang of Four
+    23 design patterns
+
+Spring :: Framework
+
+  -> less code
+  -> all configuration you can write in a class/file
+  -> boiler plate code : reduce this boiler plate code/config
+
+
+IOC : Inversion of Control : bean/object creation/destruction responsibility is on Spring
+DI : Dependency Injection : If there's any dependency from other classes, it shall be injected into your resepective beans
+
+Bean : objects maintained by spring
+            : by default, scope of beans are singleton.. you have prototype
+
+DI :
+    constructor injection
+    setter injection
+    Class
+
+    Singleton -> same hash for multiple objects, destroy method will be called when context is closed destroy 
+    prototype -> different hash, different objects,destroy method won't be called
+
+Annotations of Spring :
+
+    created a config class
+    read all config from the SportsConfig
+    @Component -> bean definition and giving name
+    @Scope & @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
+    @Value("${email}") -> to read properties from app.properties/app.yml
+    @Autowired -> Injecting your dependencies
+    @Qualifier -> to give priority to beans
+    @Bean -> to use/call third-party libraries (read access)
+
