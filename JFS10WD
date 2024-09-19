@@ -708,7 +708,10 @@ Streams.reduce -> try to read about this
 Method References : you can replace your lambda with method references, applicable on FI only
 	1. reference to a static method
 	2. ref. to constructor
-	3. ref. to an instance/non-static method 	
+	3. ref. to an instance/non-static method 
+
+    Replacement of lambda -> use method reference
+
 Practical examples for all above
 
 Callable -> similar to Runnable.. Callable returns result & throws a checked exception if it couldnot find the result.
@@ -1713,6 +1716,162 @@ Annotations of Spring :
     @Scope & @Scope(value = BeanDefinition.SCOPE_PROTOTYPE)
     @Value("${email}") -> to read properties from app.properties/app.yml
     @Autowired -> Injecting your dependencies
+                : constructor -> mandatory fields
+                : setter -> optional fields
+                : field/class level
     @Qualifier -> to give priority to beans
     @Bean -> to use/call third-party libraries (read access)
 
+Spring : 
+
+    spring mvc : model, view, controller
+        configuration : more
+        server : external tomcat server
+
+    spring boot : 
+        configuration : less
+        server : internal server -> by default tomcat server, you can change the default server
+        for microservice, this is best to use
+
+
+Spring  : https://spring.io/
+
+API Request -> (filters, mule soft, ping federate, api gateway, sandbox etc) -> controller -> service -> repository.
+gives response back from repo -> service -> controller
+
+    controller : write request parameters, type of request
+    service : business logic
+    repository/DAO : all db calls.
+
+https://start.spring.io/ -> to build spring projects
+
+Compatability matrix
+
+    java -> boot/cloud/spring framework
+    Always pick latest non-vulnerable version
+
+Lombok -> give more inbuilt configurations for your pojo items    
+
+https://projectlombok.org/download
+
+lombok in eclipse : https://stackoverflow.com/questions/22310414/how-to-configure-lombok-in-eclipse-luna
+
+checkstyle -> used to define some rules to your project
+
+@Controller -> to rep as a controller class component
+
+@RestController -> @Controller + @ResponseBody
+
+http://localhost:8080/call-api
+
+    call-api --> end-point
+    localhost -> domain/host
+    8080 -> port
+    localhost:8080 -> base uri/url
+    http/https -> protocol
+
+
+ Http Status Codes : to know how your request work & response outcome
+
+    1xx -> informational
+    2xx -> API Status/Issues
+    3xx -> Additional action from client
+    4xx -> client issues
+    5xx -> server issues
+ 
+Built a simple API :
+
+@GetMapping("call-api")
+    public String firstAPI(){
+        return "Hello, Happy Coding! Please find next steps!";
+    }
+
+
+getting All Students
+
+getting random student
+
+getting a student by rollNumber -> 
+    @PathVariable -> http://localhost:8080/getStudent/{rollNum} --> path parameter/variables
+    @RequestParam -> http://localhost:8080/getStudent?{rollNum}&{fullName} --> query parameters
+        Eg : http://localhost:8080/getStudentByQuery?rollNumber=4&fullName=Jill
+
+Postman tool : Tool to work with APIs : https://www.postman.com/downloads/
+
+Create student : @PostMapping
+
+@RequestBody -> to read student details from request -> @DeleteMapping, 
+UpdateMapping -> @PutMapping -> replaces entire object, you will send whole request body
+                 @PatchMapping -> only particular field, we send the field which is to be updated.
+
+Swagger : API Documentation & Design Tool : https://swagger.io/docs/
+
+PayPal : https://developer.paypal.com/api/rest
+
+    Swagger 2 -> Enable configuration, write more configuration
+    Swagger 3 -> add a mvn dependency
+
+  Swagger end-point to run locally :
+  
+    http://localhost:8080/swagger-ui/index.html
+    http://localhost:8080/swagger-ui.html --> redirects to above url
+
+
+ Configuring Swagger ->
+    at Application level
+    at Controller level
+    at Schema level     
+
+
+JDBC : db dependent, more control on queries
+hibernate : independent of db, hibernate mapping, orm
+JPA : Java Persistence API, hibernate is an implementation of JPA
+
+
+@Entity -> mysql table
+@Table(name = "persons") -> give table a name, not as a class name
+
+@Id --> PK
+@GeneratedValue(strategy = GenerationType.IDENTITY) --> Auto generating Pk
+
+@Column(name="", nullable = false, unique = true)
+
+Connecting to db, creating tables through java pojo, updating tables.
+
+
+
+
+
+
+
+
+Practice Questions :
+
+1. You are given a list of lists containing integers. Create a stream to flatten the nested lists, remove duplicate integers, and then find the square root of each distinct value.
+
+
+List<List<Integer>> nestedLists = Arrays.asList(
+  Arrays.asList(1, 2, 3),
+  Arrays.asList(3, 4, 5),
+  Arrays.asList(5, 6, 7),
+  Arrays.asList(7, 8, 9)
+);
+
+nestedLists.stream().flatMap(List :: stream).distinct().map(Math::sqrt).forEach(System.Out::Println)
+
+
+2. Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+Example 1:
+
+Input: nums = [1,3,5,6], target = 5
+Output: 2
+
+Constraints:
+
+1 <= nums.length <= 104
+-104 <= nums[i] <= 104
+nums contains distinct values sorted in ascending order.
+-104 <= target <= 104
