@@ -12,13 +12,23 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
-    private int personId;
+    @Column(updatable = false, insertable = false)
+    private int personId;//FK, which means PK for some other table
 
     private int OrderNumber;
 
     private String orderDetails;
 
+    @ManyToOne
+    @JoinColumn(name = "personId")
+    private Persons persons;
 
-
-
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "orderId=" + orderId +
+                ", OrderNumber=" + OrderNumber +
+                ", orderDetails='" + orderDetails + '\'' +
+                '}';
+    }
 }

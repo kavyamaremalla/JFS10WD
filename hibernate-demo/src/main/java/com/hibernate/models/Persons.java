@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "persons")
 @Data
@@ -21,4 +23,6 @@ public class Persons {
 
     private Boolean isMarried;
 
+    @OneToMany(mappedBy = "persons")
+    private List<Orders> orders;
 }

@@ -1809,7 +1809,7 @@ Swagger : API Documentation & Design Tool : https://swagger.io/docs/
 PayPal : https://developer.paypal.com/api/rest
 
     Swagger 2 -> Enable configuration, write more configuration
-    Swagger 3 -> add a mvn dependency
+    Swagger 3 -> add a mvn dependency, custom configuration at ctrlr level, dto level,  swagger application level is optional.
 
   Swagger end-point to run locally :
   
@@ -1837,10 +1837,20 @@ JPA : Java Persistence API, hibernate is an implementation of JPA
 @Column(name="", nullable = false, unique = true)
 
 Connecting to db, creating tables through java pojo, updating tables.
+    hibernate.cfg.xml -> naming is important, we declare configurations here.
 
 
+hibernate ORM : Object-Relation Mapping
 
+Mappings :
 
+        one to one mapping
+        many to one mapping
+        one to many mapping
+        many to many mapping
+
+Spring-Data-JPA :configured project for jpa: user-management, wrote a Post API
+    task : create remaining APIs.        
 
 
 

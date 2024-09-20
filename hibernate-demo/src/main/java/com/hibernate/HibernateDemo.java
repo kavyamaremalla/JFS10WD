@@ -12,10 +12,6 @@ public class HibernateDemo {
 
     public static void main(String[] args) {
 
-        Persons persons = new Persons();
-
-        persons.setFirstName("John");
-        persons.setIsMarried(false);
 
         Configuration configuration = new Configuration().configure().addAnnotatedClass(Persons.class)
                 .addAnnotatedClass(Orders.class);
@@ -26,8 +22,17 @@ public class HibernateDemo {
 
         Transaction transaction = session.beginTransaction(); // your prepared statement
 
-        session.save(persons);
+        Persons persons = session.get(Persons.class, 1);
 
         transaction.commit();
+
+        persons.getOrders().forEach(order -> {
+            System.out.println(order.getOrderId());
+            System.out.println(order.getOrderNumber());
+            System.out.println(order.getOrderDetails());
+            System.out.println(order.getPersonId());
+        });
+
+
     }
 }
