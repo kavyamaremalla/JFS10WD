@@ -1852,6 +1852,20 @@ Mappings :
 Spring-Data-JPA :configured project for jpa: user-management, wrote a Post API
     task : create remaining APIs.        
 
+spring mapping
+validation,
+exception handling
+
+
+23/09/24 : 
+
+Spring Boot DevTools : provides live reload if any change in code of the application.
+
+    Generated a project through start.spring.io
+    app.properties
+    
+
+
 
 
 
