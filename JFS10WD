@@ -1853,8 +1853,26 @@ Spring-Data-JPA :configured project for jpa: user-management, wrote a Post API
     task : create remaining APIs.        
 
 spring mapping
-validation,
-exception handling
+        map our entity to dto -> prevent hacks
+
+        controller -> dto -> service (input) -> dto convert to entity and send to repository
+        o/p -> convert your entity to your dto 
+
+            normal/Manual mapper -> UserMapper here eg.
+            model mapper ->
+                Added mvn dependency
+                created a bean in main application
+                used to map from source to destination(dto to entity or viceversa)
+            row mapper -> JDBC template
+                https://www.javatpoint.com/RowMapper-example 
+
+validation -> @NotNull, @NotBlank, @Pattern(pass regEx), @Valid on req body/fields, @Size, @NotEmpty, @Email
+
+exception handling :
+    locally -> 
+    custom exceptions : @ResponseStatus
+
+    Global exception :
 
 
 23/09/24 : 
@@ -1863,9 +1881,20 @@ Spring Boot DevTools : provides live reload if any change in code of the applica
 
     Generated a project through start.spring.io
     app.properties
-    
+    spring data mongo-db
 
+Spring Boot Actuator : to monitor health of application
 
+    Add mvn dependency :
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+    <version>3.2.4</version>
+    </dependency>
+
+actuator -> info, health, beans, mappings, configprops, metrics/ -> under metrics you can call various end-points, /env, /shutdown -> Post, hit this and your app stops.
 
 
 
@@ -1899,3 +1928,19 @@ Constraints:
 -104 <= nums[i] <= 104
 nums contains distinct values sorted in ascending order.
 -104 <= target <= 104
+
+
+3. 
+Implement an orderbook application for buying and selling one asset - stocks of company. 
+Traders put "buy" and "sell" orders in the orderbook.
+An order has a quantity of stocks and a price.
+If two orders match, the assets get exchanged between traders.
+
+Example:
+Order1: (Trader1, buy, 10 stocks, $200 dollars)
+Order2: (Trader2, buy, 15 stocks, $190 dollars)
+Order3: (Trader3, sell, 5 stocks, $200 dollars)
+Order4: (Trader4, sell, 10 stocks, $200 dollars) => Trade with Order1
+
+4. high order functions in functional programming, SOLID Principles, java reflection to inject beans other than constructor, setter, autowired
+
