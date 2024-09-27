@@ -1722,6 +1722,8 @@ Annotations of Spring :
     @Qualifier -> to give priority to beans
     @Bean -> to use/call third-party libraries (read access)
 
+    Spring Stereotype Annotations -> @Component, @Controller, @Service, @Repository
+
 Spring : 
 
     spring mvc : model, view, controller
@@ -1872,7 +1874,7 @@ exception handling :
     locally -> 
     custom exceptions : @ResponseStatus
 
-    Global exception :
+    Global exception : handles all the existing Exceptions
 
 
 23/09/24 : 
@@ -1894,7 +1896,73 @@ Spring Boot Actuator : to monitor health of application
     <version>3.2.4</version>
     </dependency>
 
-actuator -> info, health, beans, mappings, configprops, metrics/ -> under metrics you can call various end-points, /env, /shutdown -> Post, hit this and your app stops.
+In app.props you have to define properties:
+actuator -> info, health, beans, mappings, configprops, 
+    metrics/ -> under metrics you can call various end-points, 
+    /env, 
+    /shutdown -> Post, hit this and your app stops.
+
+26/09/24 :
+
+Spring ThymeLeaf :template engine used for dynamic rendering html, css to our Java application, replacement of JSP : Java Server Pages, written in XML. Spring maintains this thymeleaf configuration.    
+
+-> To integrate this with mvc/boot -> just add mvn dependency of thymeleaf
+
+Template Structure : Normal HTML and you can apply CSS/Bootstrap/Tailwind, JS to this with some spcl syntax for dynamic content -> ${text} and th : thymeleaf
+
+have ID -> some emp rec already exists -> it will call update/PUT/PATCH API
+no ID -> new emp rec -> save/post API
+
+Strings :
+
+                <td th:text="${employee.name}"> </td>
+                <td th:text="${employee.email}"> </td>
+
+<td th:text="${employee.salary}"></td> <!-- For Integer/Long -->
+<td th:text="${employee.bonus}"></td>  <!-- For Float -->
+
+Boolean : <td th:text="${employee.isActive ? 'Active' : 'Inactive'}"></td>
+
+Formatting Numbers: You can use #numbers utility for formatting:
+
+<td th:text="${#numbers.formatDecimal(employee.salary, 2, 2)}"></td> 
+<!-- Format to 2 decimal places -->
+
+Date: If you're dealing with dates, you can format them as well:
+
+<td th:text="${#dates.format(employee.hireDate, 'dd/MM/yyyy')}"></td>
+
+
+In general, just use th:text and it will handle the conversion for you, but you might need to format or handle specific cases like boolean values.
+
+Logging Mechanism : to trouble shoot your issue in you application
+
+frameworks : log4j, slf4j, logback
+
+levels : warn, error, info, debug, trace etc
+
+Servlets -> Java EE, JSP etc -> very very old tech stack
+
+create a  project choosing maven-arche-type>, structore of project is different.
+
+To run servlet we need an external server -> Tomcat server -> settings : plugins -> Install tomcat in IDE
+
+Chrome -> download tomcat 9
+    https://tomcat.apache.org/
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
 
 
 

@@ -4,6 +4,9 @@ import com.spring.jpa.demo.dto.UserDto;
 import com.spring.jpa.demo.entity.User;
 import com.spring.jpa.demo.service.UserService;
 import jakarta.validation.Valid;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +24,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/createUser")
+    @Consumes(MediaType.APPLICATION_JSON) // Accepts only JSON requests
+    @Produces(MediaType.APPLICATION_JSON) // Produces only JSON responses
     public ResponseEntity<?> createUser( @Valid @RequestBody UserDto userDto){
         //insert data into user
 
