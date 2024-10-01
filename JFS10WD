@@ -1939,11 +1939,11 @@ Logging Mechanism : to trouble shoot your issue in you application
 
 frameworks : log4j, slf4j, logback
 
-levels : warn, error, info, debug, trace etc
+levels : warn, error, info, debug, trace etc, in app.prop and how do you write logs in your application -> ctrlr., service..
 
 Servlets -> Java EE, JSP etc -> very very old tech stack
 
-create a  project choosing maven-arche-type>, structore of project is different.
+create a  project choosing maven-arche-type>, structure of project is different.
 
 To run servlet we need an external server -> Tomcat server -> settings : plugins -> Install tomcat in IDE
 
@@ -1951,13 +1951,63 @@ Chrome -> download tomcat 9
     https://tomcat.apache.org/
 
 
+Servlets -> overview and walkthrough of code
+
+Spring Security : Atleast Java 8
+
+Provides authentication and authorization., provides security against attacks, passwords for encrypting your API's., session management.
+
+Authentication : providing user the details to get into an app, like username/pwd
+Authorization : Only few level of access like read access, no access for write -> add/delete
+
+Types of Spring Security : 
+    Authentication : Form based, basic auth, O Auth2.0, JWT
+        401 unauthorized
+    Authorization -> Role based, method based etc
+        403 Forbidden
+   
+Developed APIs, gave spring-boot-starter-security as dependency in pom
+    -> it generated a password and using this we can access the API : Authentication
+    -> generated pwd changes on every restart of your application
+    -> in chrome : gave an UI
+        to login : user as username, generated pwd as password.
+        to logout : http://localhost:8080/logout    
+
+ Add these props : for not generating a pwd and a constant username and pwd
+    spring.security.user.name=admin
+    spring.security.user.password=admin       
+    Basic Authentication
+
+https://docs.spring.io/spring-security/reference/servlet/architecture.html
+
+    Security from client/UI deals with multiple filters and together called (Security)FilterChain
+
+app.props -> not a good practice, we will store our username and pwd in db, we will read from db and check with the one we pass through request
+
+
+Roles : 
+    admin : add, delete, view, update
+    user : John -> view, update (Put,Patch)
+
+Authorization:
+    at config level -> manage access
+    at method level : @EnableMethodSecurity., at API level @PreAuthorize/@PostAuthorize
+
+security expects prefix Role_ so give ROLE_ADMIN and ROLE_USERS in roles
+
+AuthenticationProvider --> implemented by DaoAuthenticationProvider -> setUserDetailsService
+
+hierarchy:
+
+AuthenticationFilter -> AuthenticationManager -> ProviderManager -> AuthenticationProvider -> DaoAuthenticationProvider -> UserDetailsService
+
+
+we overridden AuthenticationManager, UserDetailsService -> brought data(username/pwd) from db and compared the details with the incoming request's username & password
 
 
 
 
 
-
-    
 
 
 
