@@ -1961,7 +1961,7 @@ Authentication : providing user the details to get into an app, like username/pw
 Authorization : Only few level of access like read access, no access for write -> add/delete
 
 Types of Spring Security : 
-    Authentication : Form based, basic auth, O Auth2.0, JWT
+    Authentication : Form based, basic auth, O Auth2.0(to authorize), JWT
         401 unauthorized
     Authorization -> Role based, method based etc
         403 Forbidden
@@ -2003,6 +2003,75 @@ AuthenticationFilter -> AuthenticationManager -> ProviderManager -> Authenticati
 
 
 we overridden AuthenticationManager, UserDetailsService -> brought data(username/pwd) from db and compared the details with the incoming request's username & password
+
+JWT -> JSON WEB TOKEN.. hashed token -> to authenticate API's.
+
+
+Session, SessionCreationPolicy, SessionManagement, spring aop -> read about this.
+
+
+generation of JWT:
+
+string header = Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huYnJhdm8iLCJpc3MiOiJ0ZXN0Q29tcGFueS5jb20iLCJpYXQiOjE3Mjc5NTg0MjIsImV4cCI6MTcyNzk1ODcyMn0.H49tERKtcszaVLK7q20jHlqpICKMUsJgpR9npRQuNUc
+
+Spring Batch : to perform bulk operations, we use this!
+    https://spring.io/projects/spring-batch
+
+scheduled jobs -> for every last working day..
+
+copy data from one db to other db
+
+an emp came from comp x -> on board this employee to comp y., x comp will export data as an excel/csv file and send to comp y.
+comp y will process csv file and store in their db..
+
+comp x -> csv from their db
+comp y -> process the csv and store in db.
+
+spring initializr -> built a gradle project.
+
+dev.app.com
+qa.app.com
+preprod.app.com -> replica of prod env
+prod.app.com
+
+csv -> comma separated value
+
+Reader -> read values from csv
+Processor -> an insert statement will be generated with all the values and columns
+Writer -> we will write the values to database, make sure values are going to db
+
+reader -> processor -> writer
+
+Reactive Streams and Web Flux : https://spring.io/reactive
+
+API CALL -> Event Loop (thread which runs 24*7) -> non-blocking -> process requests
+
+    -> publisher : publish events -> db/api
+    -> subscriber : subscribe to events -> ctrlrs will listen to published events
+    -> subscription : to listen what we have subscribed
+
+Flow.java -> for the publisher to subscription
+
+    Flux : response could be any number from 0 to N -> any number
+    Mono : single -> either 0 or 1 response
+
+2 mini projects, 1 capstone project
+
+Maintain Indentation, good Naming Convention for classes, methods, variables, follow camelCase
+
+Maven LifeCycle 
+    mvn clean
+    mvn clean install
+    mvn clean install -DskipTests
+
+.jar in targe -> mvn clean install -> Java Decompiler : https://java-decompiler.github.io/
+
+//  TODO :: Write code for this method
+
+
+
+
+
 
 
 
