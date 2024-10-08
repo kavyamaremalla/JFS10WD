@@ -2064,13 +2064,21 @@ Maven LifeCycle
     mvn clean install
     mvn clean install -DskipTests
 
-.jar in targe -> mvn clean install -> Java Decompiler : https://java-decompiler.github.io/
+.jar in target -> mvn clean install -> Java Decompiler : https://java-decompiler.github.io/
 
 //  TODO :: Write code for this method
 
 
+Todo full stack application overview
+    ui : npm install --> at the level where index files and code is present
 
+Vite on react :
 
+    npm init @vitejs/app or  npx create-vite-app app-name    
+    npm install
+    npm run dev -> to run your app locally
+
+Spring Cloud & Microservices: 
 
 
 
