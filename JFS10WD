@@ -2066,6 +2066,11 @@ Maven LifeCycle
 
 .jar in target -> mvn clean install -> Java Decompiler : https://java-decompiler.github.io/
 
+open jar location in cmd : java -jar -Dserver.port=9090 demo-0.0.1-SNAPSHOT.jar
+This will start your application
+
+application -> can have different instances
+
 //  TODO :: Write code for this method
 
 
@@ -2078,7 +2083,70 @@ Vite on react :
     npm install
     npm run dev -> to run your app locally
 
-Spring Cloud & Microservices: 
+Spring Cloud & Microservices: https://spring.io/projects/spring-cloud
+
+ Monolithic -> Single application where you whole code is maintained
+    start-up
+
+microservices -> large scale apps
+    easy to trouble shoot
+    easy to scale, maintain
+    even if one service fails other services work as usual
+    microservice communication : async, sync
+        rest template -> deprecated
+        web client
+        open feign   
+
+api -> ms1 (sql), ms2(mongo) ... ms10(postgres) : different microservices can use diff db
+
+ms -> can run throough app, or using jar
+
+10 -100 ports -> to maintain and track ports in ms -> API Gateway -> forward req to respective ms
+
+configuration of ms -> app.props -> maintained by config server
+
+
+service registry and service discovery -> register ms and track them for discovery
+
+track api call -> distributed tracing : zipkin or micrometer
+                        paid : relic, splunk, data dog
+
+
+ms1 calls ms2 -> ms2 is down : circuit breaker                         
+
+    
+Response body :
+{
+  "employeeDto": {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@gmail.com",
+    "departmentCode": "CS"
+  },
+  "departmentDto": {
+    "id": 1,
+    "departmentName": "CSE",
+    "departmentDescription": "Computer Science engineering",
+    "departmentCode": "CS"
+  }
+}
+
+open feign client :
+    pom.xml -> added dependency
+    created API Client
+    called dept service from emp service imp using api client
+    @EnableFeignClients on app level
+
+service-registry :
+    Eureka server -> netflix
+        created an app, eureka server dependency
+            app : @EnableEurekaServer
+            app.props changes
+            in ms -> registered ms as eureka clients    
+
+
+
 
 
 
