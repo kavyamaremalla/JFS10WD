@@ -2101,7 +2101,7 @@ api -> ms1 (sql), ms2(mongo) ... ms10(postgres) : different microservices can us
 
 ms -> can run throough app, or using jar
 
-10 -100 ports -> to maintain and track ports in ms -> API Gateway -> forward req to respective ms
+10 -100 ports -> to maintain and track ports in ms -> API Gateway -> forward req to respective ms using routes
 
 configuration of ms -> app.props -> maintained by config server
 
@@ -2145,13 +2145,73 @@ service-registry :
             app.props changes
             in ms -> registered ms as eureka clients    
 
+api gateway : pom.xml changes, register with eureka server
+              @EnableEurekaClient on app level
+              app.properties changes : routes to microservices
+
+Config Server :               
+
+        pom.xml -> config server
+        app.prop -> register with eureka
+            git details
+                repo name : uri
+                branch
+                clone on true
+        app level : @EnableConfigServer
+In ms :
+
+            <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        So our ms become client to config server        
+
+In all ms : spring.config.import=optional:configserver:http://localhost:8888
+
+In all ms : remove app.props and put it in newly created repo for config server
 
 
+http://localhost:8080/actuator/refresh : If you change any app.prop in any ms, with the port number of that ms , hit actuator end point, we don't have to restart application, app picks latest app.props
 
+Zipkin & CircuitBreaker. -> Read about this
 
+********** Junit testing ********
 
+App has some functions/methods -> unit
 
+Mocking 
 
+  public static String fullName(String firstName, String lastName){
+        return firstName.concat(lastName);
+    }
+
+    1. To check what happens if you pass empty fName, empty lName
+    2. To check what happens if you pass correct values
+    etc
+
+    if(firstName == null || lastName == null){} : condition coverage
+        1. firstName is null : true or false
+        2. lastName is null : false or true
+        3. both are null : true or true
+        4. both are nut null : false or false
+
+line covreage, method coverage.
+
+Jacoco plugin -> to check code coveragem, add dependency in pom.xml.
+
+Actual vs Expected 
+    actual -> your code logic, what's happening code
+    expected -> result expectation
+    Assertions -> check if actual and expected matches.. equal, notequal, false, true etc
+
+Testing :
+
+    1. junit testing
+    2. code level testing backend--> data flow from controller to db.. localhost debugging
+    3. integration testing -> ui and backend (go hit ui)
+        a. end-to-end : All apis
+        b. sanity tests : some basic checks
 
 
 
