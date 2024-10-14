@@ -2180,7 +2180,7 @@ Zipkin & CircuitBreaker. -> Read about this
 
 App has some functions/methods -> unit
 
-Mocking 
+Mocking, mock vs stub
 
   public static String fullName(String firstName, String lastName){
         return firstName.concat(lastName);
@@ -2196,9 +2196,9 @@ Mocking
         3. both are null : true or true
         4. both are nut null : false or false
 
-line covreage, method coverage.
+line coverage, method coverage., condition coverage
 
-Jacoco plugin -> to check code coveragem, add dependency in pom.xml.
+Jacoco plugin -> to check code coverage, add dependency in pom.xml.
 
 Actual vs Expected 
     actual -> your code logic, what's happening code
@@ -2210,12 +2210,54 @@ Testing :
     1. junit testing
     2. code level testing backend--> data flow from controller to db.. localhost debugging
     3. integration testing -> ui and backend (go hit ui)
-        a. end-to-end : All apis
+        a. end-to-end : All apis, all scenarios
         b. sanity tests : some basic checks
 
+JPQL vs native query. -> how you call or post data to db.. 
+    @Query
+
+Repo Layer :
+    @DataJpaTest -> class level annotation 
+
+Test annotations :
+
+    @InjectMocks -> on which class you write test cases
+    @Mock -> on dependent classes
+    @ExtendWith(MockitoExtension.class) // to initialize your mocks or
+        in BeforeEach : MockitoAnnotations.initMocks(this);
+
+    @BeforeEach -> before each and every test case, this will be executed in a class
+    @AfterEach -> after completion of each and every test case, this will be executed in a class
+    @BeforeAll -> one time before executing all the test cases in a class
+    @AfterAll -> one time after executing all the test cases in a class
+    @Ignore -> to ignore a test case temporarily
 
 
+Mockito.when --> thenReturn
+Mockito.given --> willReturn
 
+verify --> never called
+
+@WebMvcTest -> Controller
+
+
+READ : SOLID principles, Design Patterns, DSA
+       DB Normalization, Locking, ACID Principles
+       Git -> Deeper knowledge
+       Spring : Spring AOP, AspectJ
+       Spring MVC : https://www.digitalocean.com/community/tutorials/spring-mvc-example
+       
+        Dispatcher Servlet,View Resolver
+        Creating Simple MVC Application using Spring MVC and JSP
+        Spring MVC Architecture and Working
+        Introduction to JSP and JSTL tags
+        H2-In memory Database -> spring database
+
+       Intro to Spring Boot Web (Servlet) stack 
+
+       Methodologies : Water fall, Agile (Scrum : events)
+
+       React, Angular
 
 
 
